@@ -1,80 +1,86 @@
-Original App Design Project - README Template
+Unit 8: Group Milestone - README Example
 ===
 
-# Chef's Table
+:::info
+**Below is an example** of what your **Group Project README** should include and how it should be structured for the **Unit 8 Group Milestone Submission**.
+:::
+
+# TUNIN
 
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
-2. [Schema](#Schema)
 
 ## Overview
 ### Description
+Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:** Food
-- **Mobile:** This application will use real time posts as people cook their recipes. Such as using the camera and location.
-- **Story:** Users will be able to search for recipes, add recipes, and even post their progress along the way.
-- **Market:** For people who want to promote their own recipes or blogs. For people who want to share their favorite recipes with friends, family or anyone else.
-- **Habit:** It helps all ages of people to spend time on this site to develop their cooking skill,or cooking as a habit,it might develop passion on cooking and create wonderful chefs  with the information wide range of recepies all over the world.
-- **Scope:** Users are able to create profiles and share their cooking recipes. This will be created in the form of posts! Other users will be able to see this. This will be from the database using Parse.
+- **Category:** Social Networking / Music
+- **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
+- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
+- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
+- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
+- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
 
 ## Product Spec
-
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* Users will be able to view recipes imported from [API to be used] API. 
-* ...
+* User logs in to access previous chats and preference settings
+* User picks what their favorite artist/genre/etc. (Think Spotify interface)
+* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
+* Profile pages for each user
+* Settings (Accesibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
-*Other users could like and comment on the posts.
-* ...
+* Log of past songs/people with album art covers matching
+* Page of most played songs (i.e. songs that most users are connecting through)
+* Profile Add-On: Top music choices, etc.
+* Optional Shuffle Button (i.e. random encounter/random song)
+* Listening/Encounter Queue
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
+* Login 
+* Register - User signs up or logs into their account
+   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
    * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Messaging Screen - Chat for users to communicate (direct 1-on-1)
+   * Upon selecting music choice users matched and message screen opens
+* Profile Screen 
+   * Allows user to upload a photo and fill in information that is interesting to them and others
+* Song Selection Screen.
+   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
+* Settings Screen
+   * Lets people change language, and app notification settings.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Music selection
+* Profile
+* Settings
+
+Optional:
+* Music/Encounter Queue
+* Discover (Top Choices)
 
 **Flow Navigation** (Screen to Screen)
-
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Forced Log-in -> Account creation if no log in is available
+* Music Selection (Or Queue if Optional) -> Jumps to Chat
+* Profile -> Text field to be modified. 
+* Settings -> Toggle settings
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
-
-## Schema 
-[This section will be completed in Unit 9]
-### Models
-[Add table of models]
-### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
