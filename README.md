@@ -58,20 +58,20 @@ Original App Design Project - README Template
 
 * Search Recipe
 * Profile
-* Add recepie
+* Add recipe
 * Stream
 
 **Flow Navigation** (Screen to Screen)
 
 * Search screen
-   * list of recepies
-       * On click recepie
-           * Recepie of selected item
+   * List of recipes
+       * On click recipe
+           * Recipe of selected item
 * Profile Screen
-   * About user profile and recepies completed by user.
+   * About user profile and recipes completed by user.
 * Add Screen
-   * User can add recepie to the app with recepie details and pictures
-* Home Screen(Stream screen)
+   * User can add recepe to the app with recipe details and pictures
+* Home Screen (Stream screen)
    * User will be able to see a feed of recipes and photos.
  
 ## Wireframes
