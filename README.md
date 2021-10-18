@@ -18,7 +18,7 @@ Original App Design Project - README Template
 - **Mobile:** This application will use time stamp posts as people cook their recipes, such as using the camera and location.
 - **Story:** Users will be able to search for recipes, add recipes, and even post their progress along the way.
 - **Market:** For people who want to promote their own recipes or blogs. For people who want to share their favorite recipes with friends, family or anyone else.
-- **Habit:** It helps all ages of people to spend time on this site to develop their cooking skill,or cooking as a habit, it might develop passion on cooking and create wonderful chefs  with the information wide range of recepies all over the world. This can be used whenever someone wants to share their tasty food.
+- **Habit:** It helps all ages of people to spend time on this site to develop their cooking skill,or cooking as a habit, it might develop passion on cooking and create wonderful chefs  with the information wide range of recpies all over the world. This can be used whenever someone wants to share their tasty food.
 - **Scope:** This application will start out more narrow in terms of just posting pictures of recipes with the recipes attached at the description. This will allow unique users to share other recipes with one another.
 
 ## Product Spec
