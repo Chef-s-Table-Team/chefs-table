@@ -11,6 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
+The Chef's Table App will allow users share pictures of the current recipes that they are working on. This will display their progress bar on how far along they are, look at recipes, and post their recipe progress!
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -45,6 +46,8 @@ Original App Design Project - README Template
    * User will log-in
 * Register Screen
    * User will register
+* Compose Screen
+    * User will be able to compose a recipe based off the recipe selected!
 * Stream
     * User will be able to see a feed of recipes and photos.
 * Recipe Selection Screen
@@ -63,16 +66,11 @@ Original App Design Project - README Template
 
 **Flow Navigation** (Screen to Screen)
 
-* Search screen
-   * List of recipes
-       * On click recipe
-           * Recipe of selected item
-* Profile Screen
-   * About user profile and recipes completed by user.
-* Add Screen
-   * User can add recepe to the app with recipe details and pictures
-* Home Screen (Stream screen)
-   * User will be able to see a feed of recipes and photos.
+* Forced Log-in -> Account creation if no log in is available
+* Recipe Steam -> Posts
+* Profile -> How many induvidual recipes completed
+* Recipe Search/Selection -> Detailed recipe screen
+* Detailed Recipe Screen -> If the user selects the recipe, this will take them to a compose screen.
  
 ## Wireframes
 ![](https://i.imgur.com/XgKbSrF.jpg)
