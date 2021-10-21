@@ -26,6 +26,8 @@ The Chef's Table App will allow users share pictures of the current recipes that
 
 ### 1. User Stories (Required and Optional)
 
+**: Optional
+
 **Required Must-have Stories**
 * User is able to log-in
 * User can register for a new account
@@ -78,13 +80,177 @@ The Chef's Table App will allow users share pictures of the current recipes that
 ### [BONUS] Digital Wireframes & Mockups
 ![](https://i.imgur.com/f1dllDH.png)
 
-### [BONUS] Interactive Prototype
-
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+**Post**
+| Property |    Type  | Description |
+| -------- | -------- | -------- |
+| ObjectID | String   | Unique id for the user post (default field)    |
+| image | File | Photos used in the recipes shown in app
+| user  | Pointer to User| Username that will show who created the post      |
+| Caption | String | Image caption by author |
+| createdAt | DateTime | Date when post was created     |
+| updatedAt |DateTime|Date when post is last updated|
+
+
+**User**
+| Property |    Type  | Description |
+| -------- | -------- | -------- |
+| image| File | User profile image
+| user | Pointer to User| Username
+| bio | String | biography of user |
+| email |String | email for user |
+| recipeCt | int | number of recipes completed by user |
+
+**Home Profile Feed**
+| Property |    Type  | Description |
+| -------- | -------- | -------- |
+| image     | File    | Recipe image|
+| caption  |   String |	image caption by author|
+| ObjectID | Pointer to User | Username 
+| image | File | User profile of the post
+
+
+
+**Search Recipe**
+| Property |    Type  | Description |
+| -------- | -------- | -------- |
+| strMeal  | String | name of specific meal |
+| idMeal  | ID | name of specific meal |
+| strTags | String | keyword(s) used to find recipe from user search request |
+| searchInput | Pointer To Search | user input created to find specific recipes |
+
+**Detailed Recipe**
+| Property |    Type  | Description |
+| -------- | -------- | -------- |
+|  strMeal | String | name of the specific meal |
+| strInstructions | String | instructions of the specific meal
+| strIngredient | String | ingredients for that specific meal
+| strMeasure | String | measurements for specific ingredients needed for the meal |
+| strYoutube | String | link to YouTube video of recipe |
+| strMealThumb | String | link to display picture of the meal
+
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- User sign-up/Register
+    * (Create/USER) User will register for platform
+    * (Read/GET) Read user data for login to app
+```Java    
+String username = "chef"
+String password = "password123";
+String email = "coolchef@gmail.com";
+ParseUser user = new ParseUser();
+
+user.setEmail(email);
+user.setUsername(username);
+user.setPassword(password);
+user.signUpInBackground(new SignUpCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e != null) {
+                            Log.e(TAG, "Issue with registering user", e);
+                            Toast.makeText(SignUpActivity.this, "Issue with the Login", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        goMainActivity();
+                        Toast.makeText(SignUpActivity.this, "Success!",Toast.LENGTH_SHORT).show();
+```
+- Home Feed Screen
+    * (Read/GET) Query all posts 
+    * (Create/POST) Create a new like on a post
+    * (Create/POST) Create a new comment on a post
+    * (Delete) Delete existing comment
+```java    
+List<Posts> posts;
+String comments [];
+Context context;
+int likes;
+public postsAdapter(Context context, List <Posts> p)
+{
+this.context = context;
+this.posts = p;
+}
+
+public void addAll(List<Post> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
+    
+    /*
+     * Display user likes with the post.
+     * 
+     * Display the list of comments below the post
+     * 
+     * 
+```
+- Create Post Screen
+    * (Create/POST) Create a new post object
+```java
+ParseQuery<ParseObject> query = ParseQuery.getQuery("RecepieCount");
+query.whereEqualTo("userName", "Sean Plott");
+query.countInBackground(new CountCallback() {
+  public void done(int count, ParseException e) {
+    if (e == null) {
+      // The count request succeeded. Log the count
+      Log.d("score", "Sean has created " + count + " recepies");
+    } else {
+      // The request failed
+    }
+  }
+});
+```
+- Profile Screen
+    * (Read/GET) Query logged in user object
+```java
+ParseUser.logInInBackground("Jerry", "showmethemoney", new LogInCallback() {
+  public void done(ParseUser user, ParseException e) {
+    if (user != null) {
+      // Hooray! The user is logged in.
+    } else {
+      // Signup failed. Look at the ParseException to see what happened.
+    }
+  }
+});
+
+```
+- Profile Image
+    * (Update/PUT) Update user profile image
+```java    
+ ParseQuery<ParseObject> query = ParseQuery.getQuery(user.class);
+    
+    // Include the post data with each comment
+    query.include("Author"); // the key which the associated object was stored
+    
+    // Execute query with eager-loaded owner
+    query.findInBackground(new FindCallback<ParseObject>() {
+     ....
+    }       
+
+```
+
+## Endpoints
+
+- ### Back4App (to be created)
+    - Base URL - [https://parseapi.back4app.com/classes/ChefsTable](https://parseapi.back4app.com/classes/ChefsTable)
+
+   | HTTP Verb | Endpoint | Description |
+   | ----------|----------| ----------- |
+   | `POST`    | /classes/Post/User | we get data from the user of their progress step(s) for their post |
+   | `GET`     | /classes/Post/Recipe | we get data from TheMealDB API for the recipe |
+   | `GET`     | /users | we get user details when we are logging in, and the Profile fragment |
+   | `POST`    | /users | we post when the user is signing up for a new profile or creating a post  |
+
+- ### TheMealDB API
+    - Base URL - [https://www.themealdb.com/api.php](https://www.themealdb.com/api.php)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /strMeal | get recipe name
+    `GET`    | /strInstructions| return recipe instructions
+    `GET`    | /strMealThumb   | get image of recipe
+    `GET`    | /strIngredientN | return nth ingredient
+    `GET`    | /strMeasurementN | return nth measurement of nth ingredient
+    `GET`    | /strYoutube | get link to YouTube video
