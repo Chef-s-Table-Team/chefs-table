@@ -81,7 +81,6 @@ The Chef's Table App will allow users share pictures of the current recipes that
 ![](https://i.imgur.com/f1dllDH.png)
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
 
 **Post**
