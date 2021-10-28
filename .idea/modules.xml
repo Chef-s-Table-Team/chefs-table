@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chef's_Table.iml" filepath="$PROJECT_DIR$/.idea/modules/Chef's_Table.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Chef's_Table.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Chef's_Table.app.iml" />
+    </modules>
+  </component>
+</project>
