@@ -2,6 +2,12 @@ package com.example.chefstable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.parse.LogInCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
 import android.os.Bundle;
 
 import android.content.Intent;
@@ -33,13 +39,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    /*
+
         if (ParseUser.getCurentUser() != null) {
 
             go_to_main_activity();
 
         }
-*/
+
         etUsername = findViewById(R.id.etUsername);
 
         etPassword = findViewById(R.id.etPassword);
@@ -89,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //create parse user
-        /*
+
         ParseUser user = new ParseUser(); //parse app code to be written
 
         //set user + password for User class instance
@@ -125,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-    */
+
     }
 
     private void log_in_user(String user, String password) {
@@ -133,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.i(TAG, "Attempting to log in user: " + user + "...");
 
         //user signed in properly? go to main activity
-        /*
+
         ParseUser.logInInBackground(user, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
@@ -156,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        */
+
     }
 
     private void go_to_main_activity() {
