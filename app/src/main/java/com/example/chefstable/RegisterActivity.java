@@ -20,7 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPass;
     private EditText etEmail;
-    private Button btnSign;
+    private Button btnSign; //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
