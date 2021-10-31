@@ -37,12 +37,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         if (ParseUser.getCurrentUser() != null) {
+    /*
+        if (ParseUser.getCurentUser() != null) {
 
             go_to_main_activity();
 
         }
-
+*/
         etUsername = findViewById(R.id.etUsername);
 
         etPassword = findViewById(R.id.etPassword);
@@ -91,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
     private void create_user(String new_user, String password) {
 
         //create parse user
-
+        /*
         ParseUser user = new ParseUser(); //parse app code to be written
 
         //set user + password for User class instance
@@ -127,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-
+    */
     }
 
     private void log_in_user(String user, String password) {
@@ -135,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.i(TAG, "Attempting to log in user: " + user + "...");
 
         //user signed in properly? go to main activity
-
+        /*
         ParseUser.logInInBackground(user, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
@@ -158,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-
+        */
     }
 
     private void go_to_main_activity() {
