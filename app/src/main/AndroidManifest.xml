@@ -12,34 +12,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".ParseApplication"
         android:theme="@style/Theme.ChefsTable">
 
         <activity
-
             android:name=".RegisterActivity"
+<<<<<<<<< Temporary merge branch 1
             android:exported="true"/>
         <activity
             android:name=".LoginActivity"
-            android:exported="true"/>
+            android:exported="true">
+=========
+            android:exported="true">
+        </activity>
+>>>>>>>>> Temporary merge branch 2
 
+        <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".RegisterActivity"
+<<<<<<<<< Temporary merge branch 1
 
-            android:exported="true" >
-         </activity>
-
+=========
+>>>>>>>>> Temporary merge branch 2
         <activity
             android:name=".MainActivity"
             android:exported="true" >
-
         </activity>
     </application>
 
