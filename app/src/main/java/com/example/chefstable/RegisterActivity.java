@@ -52,8 +52,11 @@ public class RegisterActivity extends AppCompatActivity {
                         if (e != null) {
                             Log.e(TAG, "Issue with registration", e);
                             Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                            return;
                         }
                         // else switch to the main activity
+                        goMainActivity();
+                        Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
