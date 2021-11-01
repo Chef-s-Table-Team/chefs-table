@@ -17,15 +17,8 @@
 
         <activity
             android:name=".RegisterActivity"
-<<<<<<<<< Temporary merge branch 1
             android:exported="true"/>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-=========
-            android:exported="true">
-        </activity>
->>>>>>>>> Temporary merge branch 2
+
 
         <activity
             android:name=".LoginActivity"
@@ -36,10 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<<<< Temporary merge branch 1
-
-=========
->>>>>>>>> Temporary merge branch 2
         <activity
             android:name=".MainActivity"
             android:exported="true" >

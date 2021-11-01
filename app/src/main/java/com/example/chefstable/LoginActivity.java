@@ -37,25 +37,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-<<<<<<<<< Temporary merge branch 1
-    /*
-        if (ParseUser.getCurrentUser() != null) {
 
-=========
 
         if (ParseUser.getCurrentUser() != null) {
->>>>>>>>> Temporary merge branch 2
+
 
                 go_to_main_activity();
 
         }
-<<<<<<<<< Temporary merge branch 1
-
-     */
-
-        etUsername = findViewById(R.id.etUsername);
-=========
->>>>>>>>> Temporary merge branch 2
 
             etUsername = findViewById(R.id.etUsername);
 
@@ -76,12 +65,8 @@ public class LoginActivity extends AppCompatActivity {
                     //get text from username + password fields, and login user
 
                     String user = etUsername.getText().toString();
-
-<<<<<<<<< Temporary merge branch 1
-               // log_in_user(user, password);
-=========
                     String password = etPassword.getText().toString();
->>>>>>>>> Temporary merge branch 2
+
 
                     log_in_user(user, password);
 
@@ -98,12 +83,9 @@ public class LoginActivity extends AppCompatActivity {
                     Intent b = new Intent(LoginActivity.this, RegisterActivity.class);
                     startActivity(b);
 
-<<<<<<<<< Temporary merge branch 1
-            //    create_user(user, password);
-=========
                 }
             });
->>>>>>>>> Temporary merge branch 2
+
 
         }
         /*
@@ -117,8 +99,6 @@ public class LoginActivity extends AppCompatActivity {
 
         //create parse user
 
-        ParseUser user = new ParseUser(); //parse app code to be written
-=========
             ParseUser user = new ParseUser(); //parse app code to be written
 
             //set user + password for User class instance
@@ -156,34 +136,17 @@ public class LoginActivity extends AppCompatActivity {
 
             });
 
-<<<<<<<<< Temporary merge branch 1
-        });
-
     }
 */
-    /*
-    private void log_in_user(String user, String password) {
-=========
-        }
-    */
-        private void log_in_user (String user, String password){
+    private void log_in_user (String user, String password){
 
             Log.i(TAG, "Attempting to log in user: " + user + "...");
->>>>>>>>> Temporary merge branch 2
 
             //user signed in properly? go to main activity
 
-<<<<<<<<< Temporary merge branch 1
-        //user signed in properly? go to main activity
-
-        ParseUser.logInInBackground(user, password, new LogInCallback() {
-            @Override
-            public void done(ParseUser user, ParseException e) {
-=========
             ParseUser.logInInBackground(user, password, new LogInCallback() {
                 @Override
                 public void done(ParseUser user, ParseException e) {
->>>>>>>>> Temporary merge branch 2
 
                     if (e != null) {
 
@@ -203,17 +166,11 @@ public class LoginActivity extends AppCompatActivity {
 
             });
 
-<<<<<<<<< Temporary merge branch 1
-
     }
 
-     */
 
-    private void go_to_main_activity() {
-=========
 
-        }
->>>>>>>>> Temporary merge branch 2
+
 
         private void go_to_main_activity () {
 

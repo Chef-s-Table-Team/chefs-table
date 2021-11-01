@@ -12,11 +12,7 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-<<<<<<<<< Temporary merge branch 1
 
-
-
-=========
 /*
 allprojects {
     repositories {
@@ -26,7 +22,6 @@ allprojects {
     }
 }
 */
->>>>>>>>> Temporary merge branch 2
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
