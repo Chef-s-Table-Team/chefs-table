@@ -39,137 +39,133 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (ParseUser.getCurrentUser() != null) {
-    /*
-        if (ParseUser.getCurentUser() != null) {
 
-            go_to_main_activity();
+                go_to_main_activity();
 
         }
-*/
-        etUsername = findViewById(R.id.etUsername);
 
-        etPassword = findViewById(R.id.etPassword);
+            etUsername = findViewById(R.id.etUsername);
 
-        login_button = findViewById(R.id.login_button);
+            etPassword = findViewById(R.id.etPassword);
 
-        sign_up_button = findViewById(R.id.sign_up_button);
+            login_button = findViewById(R.id.login_button);
 
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+            sign_up_button = findViewById(R.id.sign_up_button);
 
-                //log in message for error logging
+            login_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                Log.i(TAG, "onClick login btnCaptureImage");
+                    //log in message for error logging
 
-                //get text from username + password fields, and login user
+                    Log.i(TAG, "onClick login");
 
-                String user = etUsername.getText().toString();
+                    //get text from username + password fields, and login user
 
-                String password = etPassword.getText().toString();
+                    String user = etUsername.getText().toString();
 
-                log_in_user(user, password);
+                    String password = etPassword.getText().toString();
 
-            }
-        });
+                    log_in_user(user, password);
 
-        sign_up_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "onClick sign up button");
+                }
+            });
 
-                //get text from username + password fields, and sign up user
+            sign_up_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.i(TAG, "onClick sign up button");
 
-                String user = etUsername.getText().toString();
+                    //get text from username + password fields, and sign up user
 
-                String password = etPassword.getText().toString();
+                    Intent b = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(b);
 
-                create_user(user, password);
+                }
+            });
 
-            }
-        });
-
-    }
-
-    private void create_user(String new_user, String password) {
-
-        //create parse user
+        }
         /*
-        ParseUser user = new ParseUser(); //parse app code to be written
+        private void create_user (String new_user, String password){
 
-        //set user + password for User class instance
+            //create parse user
 
-        user.setUsername(new_user);
+            ParseUser user = new ParseUser(); //parse app code to be written
 
-        user.setPassword(password);
+            //set user + password for User class instance
 
-        //create sign up to be done in background
+            user.setUsername(new_user);
 
-        user.signUpInBackground(new SignUpCallback() {
+            user.setPassword(password);
 
-            public void done(ParseException e) {
+            //create sign up to be done in background
 
-                if (e == null) { //log in valid?
+            user.signUpInBackground(new SignUpCallback() {
+
+                public void done(ParseException e) {
+
+                    if (e == null) { //log in valid?
+
+                        go_to_main_activity();
+
+                        Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
+
+                        //let user use app afterwards :)
+
+                    } else { //issue with sign up
+
+                        Log.e(TAG, "Sign up failed, error: ", e);
+
+                        Toast.makeText(LoginActivity.this, "Sign up issue.", Toast.LENGTH_SHORT).show();
+
+                        return;
+
+                    }
+
+                }
+
+            });
+
+        }
+    */
+        private void log_in_user (String user, String password){
+
+            Log.i(TAG, "Attempting to log in user: " + user + "...");
+
+            //user signed in properly? go to main activity
+
+            ParseUser.logInInBackground(user, password, new LogInCallback() {
+                @Override
+                public void done(ParseUser user, ParseException e) {
+
+                    if (e != null) {
+
+                        Log.e(TAG, "Log in issue: ", e);
+
+                        Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT);
+
+                        return;
+
+                    }
 
                     go_to_main_activity();
 
                     Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
 
-                    //let user use app afterwards :)
-
-                } else { //issue with sign up
-
-                    Log.e(TAG, "Sign up failed, error: ", e);
-
-                    Toast.makeText(LoginActivity.this, "Sign up issue.", Toast.LENGTH_SHORT).show();
-
-                    return;
-
                 }
 
-            }
+            });
 
-        });
-    */
-    }
 
-    private void log_in_user(String user, String password) {
+        }
 
-        Log.i(TAG, "Attempting to log in user: " + user + "...");
+        private void go_to_main_activity () {
 
-        //user signed in properly? go to main activity
-        /*
-        ParseUser.logInInBackground(user, password, new LogInCallback() {
-            @Override
-            public void done(ParseUser user, ParseException e) {
+            Intent i = new Intent(this, MainActivity.class);
 
-                if (e != null) {
+            startActivity(i);
+            finish();
 
-                    Log.e(TAG, "Log in issue: ", e);
-
-                    Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT);
-
-                    return;
-
-                }
-
-                go_to_main_activity();
-
-                Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT).show();
-
-            }
-
-        });
-
-        */
-    }
-
-    private void go_to_main_activity() {
-
-        Intent i = new Intent(this, MainActivity.class);
-
-        startActivity(i);
+        }
 
     }
-
-}
