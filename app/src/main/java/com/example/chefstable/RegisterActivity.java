@@ -49,14 +49,15 @@ public class RegisterActivity extends AppCompatActivity {
                 user.signUpInBackground(new SignUpCallback() {  // get user obj to sign up in background...
                     @Override
                     public void done(ParseException e) {
-                        if (e != null) {
+                        if (e == null) {
                             Log.e(TAG, "Issue with registration", e);
                             Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
                             return;
+                        } else {
+                            // else switch to the main activity
+                            goMainActivity();
+                            Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                         }
-                        // else switch to the main activity
-                        goMainActivity();
-                        Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
