@@ -38,7 +38,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
+
         if (ParseUser.getCurrentUser() != null) {
+
 
                 go_to_main_activity();
 
@@ -63,8 +65,8 @@ public class LoginActivity extends AppCompatActivity {
                     //get text from username + password fields, and login user
 
                     String user = etUsername.getText().toString();
-
                     String password = etPassword.getText().toString();
+
 
                     log_in_user(user, password);
 
@@ -84,15 +86,23 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
+
         }
         /*
         private void create_user (String new_user, String password){
 
             //create parse user
 
+<<<<<<<<< Temporary merge branch 1
+    /*
+    private void create_user(String new_user, String password) {
+
+        //create parse user
+
             ParseUser user = new ParseUser(); //parse app code to be written
 
             //set user + password for User class instance
+>>>>>>>>> Temporary merge branch 2
 
             user.setUsername(new_user);
 
@@ -126,9 +136,9 @@ public class LoginActivity extends AppCompatActivity {
 
             });
 
-        }
-    */
-        private void log_in_user (String user, String password){
+    }
+*/
+    private void log_in_user (String user, String password){
 
             Log.i(TAG, "Attempting to log in user: " + user + "...");
 
@@ -156,8 +166,11 @@ public class LoginActivity extends AppCompatActivity {
 
             });
 
+    }
 
-        }
+
+
+
 
         private void go_to_main_activity () {
 
