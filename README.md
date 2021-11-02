@@ -3,7 +3,7 @@ Original App Design Project - README Template
 
 # Chef's Table
 
-##Milstone 1
+### Milestone 1
 <img src="chefmilestone1.gif" width=250><br>
 
 -------
