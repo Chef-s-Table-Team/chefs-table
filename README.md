@@ -3,6 +3,11 @@ Original App Design Project - README Template
 
 # Chef's Table
 
+##Milstone 1
+<img src="chefmilestone1.gif" width=250><br>
+
+-------
+
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
