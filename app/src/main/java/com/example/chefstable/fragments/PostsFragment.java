@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.chefstable.Post;
+import com.example.chefstable.PostsAdapter;
 import com.example.chefstable.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -55,18 +56,22 @@ public class PostsFragment extends Fragment {
         allPosts=new ArrayList<>();
         adapter=new PostsAdapter(getContext(),allPosts);
 
+        rvPosts.setAdapter(adapter);
+
+        rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
         swipeContainer=view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 Log.i(TAG,"fetching new data!");
                 queryPosts();
+                adapter.clear();
+                adapter.addAll(allPosts);
+                swipeContainer.setRefreshing(false);
             }
         });
 
-        rvPosts.setAdapter(adapter);
 
-        rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
         queryPosts();
 
     }
@@ -84,10 +89,10 @@ public class PostsFragment extends Fragment {
                 for(Post post : posts) {
                     Log.i(TAG, "Post:" + post.getDescription() + ",username: " + post.getUser().getUsername());
                 }
-                adapter.clear();
+               // adapter.clear();
                 allPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
-                swipeContainer.setRefreshing(false);
+               // swipeContainer.setRefreshing(false);
             }
         });
 
