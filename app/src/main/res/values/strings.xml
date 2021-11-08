@@ -5,7 +5,7 @@
     <string name="pw_label">Password</string>
     <string name="login_label">Login</string>
     <string name="sign_up_label">Sign Up</string>
-   
+
 
     <string name="app_name">ChefsTable</string>
 
@@ -16,6 +16,4 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
