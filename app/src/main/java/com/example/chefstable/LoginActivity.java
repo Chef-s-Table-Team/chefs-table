@@ -38,13 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-
         if (ParseUser.getCurrentUser() != null) {
-
 
                 go_to_main_activity();
 
         }
+
+
 
             etUsername = findViewById(R.id.etUsername);
 
@@ -65,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                     //get text from username + password fields, and login user
 
                     String user = etUsername.getText().toString();
+
                     String password = etPassword.getText().toString();
 
 
@@ -83,9 +84,9 @@ public class LoginActivity extends AppCompatActivity {
                     Intent b = new Intent(LoginActivity.this, RegisterActivity.class);
                     startActivity(b);
 
+
                 }
             });
-
 
         }
         /*
@@ -99,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //create parse user
 
+        ParseUser user = new ParseUser(); //parse app code to be written
+=========
             ParseUser user = new ParseUser(); //parse app code to be written
 
             //set user + password for User class instance
@@ -135,15 +138,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             });
-
-    }
 */
-    private void log_in_user (String user, String password){
+
+        private void log_in_user (String user, String password){
 
             Log.i(TAG, "Attempting to log in user: " + user + "...");
 
-            //user signed in properly? go to main activity
-
+        //user signed in properly? go to main activity
             ParseUser.logInInBackground(user, password, new LogInCallback() {
                 @Override
                 public void done(ParseUser user, ParseException e) {
@@ -166,10 +167,9 @@ public class LoginActivity extends AppCompatActivity {
 
             });
 
+
+
     }
-
-
-
 
 
         private void go_to_main_activity () {
