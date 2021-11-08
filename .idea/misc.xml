@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="app/src/main/res/layout/fragment_compose.xml" value="0.11510416666666666" />
+
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/activity_register.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/fragment_posts.xml" value="0.1640625" />
+
       </map>
     </option>
   </component>

@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = etEmail.getText().toString();
                 ParseUser user = new ParseUser(); // here we will invoke a ParseUser obj
 
-                user.setEmail(email);
+               // user.setEmail(email);
                 user.setUsername(username);
                 user.setPassword(password);
 
@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
                 user.signUpInBackground(new SignUpCallback() {  // get user obj to sign up in background...
                     @Override
                     public void done(ParseException e) {
-                        if (e == null) {
+                        if (e != null) {
                             Log.e(TAG, "Issue with registration", e);
                             Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
                             return;

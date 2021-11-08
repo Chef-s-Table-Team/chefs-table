@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         Log.e(TAG, "Log in issue: ", e);
 
-                        Toast.makeText(LoginActivity.this, "Success!", Toast.LENGTH_SHORT);
+                        Toast.makeText(LoginActivity.this, "Issue with login", Toast.LENGTH_SHORT);
 
                         return;
 
