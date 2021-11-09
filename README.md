@@ -4,7 +4,7 @@ Original App Design Project - README Template
 # Chef's Table
 
 ### Milestone 2
-<img src="https://github.com/Chef-s-Table-Team/chefs-table/blob/master/chefmilestone2.gif" width=250<br>
+<img src='https://github.com/Chef-s-Table-Team/chefs-table/blob/master/chefmilestone2.gif'/>
 
 ### Milestone 1
 <img src="chefmilestone1.gif" width=250><br>
