@@ -1,4 +1,4 @@
-package com.example.chefstable;
+package com.example.chefstable.fragments;
 import static android.app.Activity.RESULT_OK;
 
 import android.content.Intent;
@@ -24,6 +24,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.chefstable.LoginActivity;
+import com.example.chefstable.Post;
+import com.example.chefstable.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
