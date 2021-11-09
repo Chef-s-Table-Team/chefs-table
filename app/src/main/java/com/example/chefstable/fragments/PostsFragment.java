@@ -55,10 +55,9 @@ public class PostsFragment extends Fragment {
 
         allPosts=new ArrayList<>();
         adapter=new PostsAdapter(getContext(),allPosts);
-
         rvPosts.setAdapter(adapter);
-
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
+
         swipeContainer=view.findViewById(R.id.swipeContainer);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -70,7 +69,6 @@ public class PostsFragment extends Fragment {
                 swipeContainer.setRefreshing(false);
             }
         });
-
 
         queryPosts();
 
