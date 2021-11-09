@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
 import java.util.List;
@@ -76,7 +77,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             ParseFile image = post.getImage();
             if (image != null) {
                 // we need to import Glide libraries
-             //   Glide.with(context).load(post.getImage().getUrl()).into(ivPost);
+                Glide.with(context).load(post.getImage().getUrl()).into(ivPost);
             }
         }
     }

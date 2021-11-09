@@ -3,6 +3,9 @@ Original App Design Project - README Template
 
 # Chef's Table
 
+### Milestone 2
+<img src='https://github.com/Chef-s-Table-Team/chefs-table/blob/master/chefmilestone2.gif'/>
+
 ### Milestone 1
 <img src="chefmilestone1.gif" width=250><br>
 
@@ -34,10 +37,10 @@ The Chef's Table App will allow users share pictures of the current recipes that
 **: Optional
 
 **Required Must-have Stories**
-* User is able to log-in
-* User can register for a new account
+* User is able to log-in [x]
+* User can register for a new account [x]
 * User can look up a variety of recipes
-* Users are able to compose/create posts.
+* Users are able to compose/create posts. [x]
 * Users are able to use the camera.
 * Users are able to see the progress above the post**
 
