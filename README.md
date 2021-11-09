@@ -37,10 +37,10 @@ The Chef's Table App will allow users share pictures of the current recipes that
 **: Optional
 
 **Required Must-have Stories**
-* User is able to log-in
-* User can register for a new account
+* User is able to log-in [x]
+* User can register for a new account [x]
 * User can look up a variety of recipes
-* Users are able to compose/create posts.
+* Users are able to compose/create posts. [x]
 * Users are able to use the camera.
 * Users are able to see the progress above the post**
 
