@@ -2,6 +2,7 @@ Original App Design Project - README Template
 ===
 
 # Chef's Table
+
 ### Milestone 2
 <img src="chefmilestone2.gif" width=250<br>
 
