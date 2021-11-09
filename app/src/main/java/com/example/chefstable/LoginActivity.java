@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.ParseException;
+// import java.text.ParseException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        if (ParseUser.getCurentUser() != null) {
+        if (ParseUser.getCurrentUser() != null) {
 
             go_to_main_activity();
 
@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void create_user(String user, String password) {
+    private void create_user(String user_, String password) {
 
 
         //create parse user
@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //set user + password for User class instance
 
-        user.setUsername(user);
+        user.setUsername(user_);
 
         user.setPassword(password);
 
