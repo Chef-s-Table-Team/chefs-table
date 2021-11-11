@@ -66,7 +66,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvUser1 = itemView.findViewById(R.id.tvUser1);
             tvCaption = itemView.findViewById(R.id.tvCaption);
             ivPost = itemView.findViewById(R.id.ivPost);
-          //  ivProf1 = itemView.findViewById(R.id.ivProf1);
+            ivProf1 = itemView.findViewById(R.id.ivProf1);
         }
 
         public void bind(Post post) {
@@ -74,10 +74,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvCaption.setText(post.getDescription());
             tvUser1.setText(post.getUser().getUsername());
             // make sure to add profile picture snippet
-            ParseFile image = post.getImage();
+            ParseFile image = post.getImage(); // get the picture
+            ParseFile profile = post.getProfile();
             if (image != null) {
                 // we need to import Glide libraries
                 Glide.with(context).load(post.getImage().getUrl()).into(ivPost);
+            }
+            if (profile != null) {
+                Glide.with(context).load(post.getProfile().getUrl()).into(ivProf1);
             }
         }
     }

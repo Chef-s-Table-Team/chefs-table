@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/ivProf1"
-        android:layout_width="54dp"
-        android:layout_height="51dp"
+        android:layout_width="71dp"
+        android:layout_height="65dp"
         app:layout_constraintBottom_toTopOf="@+id/ivPost"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/ivProf1"
         app:layout_constraintTop_toTopOf="parent" />
 
