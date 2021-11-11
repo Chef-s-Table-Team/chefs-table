@@ -30,7 +30,7 @@ import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
-    public static final String SEARCH_URL="https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata";
+    public static final String SEARCH_URL="https://www.themealdb.com/api/json/v1/1/search.php?s=";
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
     List<Recipe> recipes;

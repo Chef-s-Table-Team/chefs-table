@@ -1,11 +1,14 @@
 package com.example.chefstable.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +28,17 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     public RecipeAdapter(Context context, List<Recipe> recipes) {
         this.context = context;
         this.recipes = recipes;
+    }
+
+    public void clear(){
+        recipes.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<Recipe> recipe_list) {
+        recipes.addAll(recipe_list);
+        notifyDataSetChanged();
+
     }
 
     //Usually involves inflating a layout from XML and returning the holder
@@ -54,7 +68,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
+        RelativeLayout container;
         TextView tvTitle;
         ImageView ivPoster;
 
@@ -62,11 +76,34 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             super(itemView);
             tvTitle=itemView.findViewById(R.id.tvTitle);
             ivPoster=itemView.findViewById(R.id.ivPoster);
+            container = itemView.findViewById(R.id.container);
         }
 
         public void bind(Recipe recipe) {
             tvTitle.setText(recipe.getTitle());
+            String imgURL;
+
+            //get thumbnail for recipe
+
+            imgURL = recipe.getMealThumb();
+
             Glide.with(context).load(recipe.getMealThumb()).into(ivPoster);
+
+            //register click listener to whole row
+
+            container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //go to detail recipe
+
+                    Intent i = new Intent(context, Detailed_recipe.class); //import qian + maria's file
+
+                    i.putExtra("idMeal", Parcels.wrap(recipe)); //how does line work again?
+
+                    context.startActivity(i);
+
+                }
+            });
         }
     }
 
