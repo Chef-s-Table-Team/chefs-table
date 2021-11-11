@@ -84,7 +84,7 @@ public class PostsFragment extends Fragment {
                 if(e != null) {
                     Log.e(TAG,"Issue with getting posts",e);
                 }
-                for(Post post : posts) {
+                for (Post post : posts) {
                     Log.i(TAG, "Post:" + post.getDescription() + ",username: " + post.getUser().getUsername());
                 }
                // adapter.clear();

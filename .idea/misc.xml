@@ -3,12 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/activity_register.xml" value="0.15364583333333334" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/fragment_compose.xml" value="0.1796875" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/fragment_posts.xml" value="0.1640625" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/layout/item_post.xml" value="0.1796875" />
-        <entry key="..\:/Users/Maria/AndroidStudioProjects/ChefsTable/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.1796875" />
+        <entry key="app/src/main/res/xml/fileprovider.xml" value="0.14895833333333333" />
       </map>
     </option>
   </component>
