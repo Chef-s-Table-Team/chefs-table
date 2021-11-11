@@ -66,7 +66,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvUser1 = itemView.findViewById(R.id.tvUser1);
             tvCaption = itemView.findViewById(R.id.tvCaption);
             ivPost = itemView.findViewById(R.id.ivPost);
-            ivProf1 = itemView.findViewById(R.id.ivProf1);
+          //  ivProf1 = itemView.findViewById(R.id.ivProf1);
         }
 
         public void bind(Post post) {
