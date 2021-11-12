@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
+    android:layout_margin="8dp"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/ivProf1"
-        android:layout_width="68dp"
+        android:layout_width="71dp"
         android:layout_height="65dp"
         app:layout_constraintBottom_toTopOf="@+id/ivPost"
-        app:layout_constraintEnd_toStartOf="@+id/tvUser1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -21,39 +21,51 @@
         android:id="@+id/tvUser1"
         android:layout_width="317dp"
         android:layout_height="37dp"
-        android:layout_marginTop="62dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="4dp"
         android:text="Chef"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ivPost"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/ivProf1"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.mackhartley.roundedprogressbar.RoundedProgressBar
+        android:id="@+id/roundedProgressBar"
+        android:layout_width="245dp"
+        android:layout_height="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvUser1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rpbBackgroundColor="#fccb4e"
+        app:rpbCornerRadius="20dp"
+        app:rpbProgressColor="#ffe39c"
+        app:rpbShowProgressText="false" />
+
     <ImageView
         android:id="@+id/ivPost"
-        android:layout_width="395dp"
-        android:layout_height="185dp"
+        android:layout_width="412dp"
+        android:layout_height="165dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="420dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUser1"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvCaption"
-        android:layout_width="405dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="384dp"
+        android:layout_height="73dp"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="4dp"
         android:text="My salad"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPost" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
