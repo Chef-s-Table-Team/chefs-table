@@ -16,6 +16,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.chefstable.adapters.RecipeAdapter;
 import com.example.chefstable.fragments.ComposeFragment;
 import com.example.chefstable.fragments.PostsFragment;
+import com.example.chefstable.fragments.RecipeFragment;
 import com.example.chefstable.models.Recipe;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -30,7 +31,6 @@ import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
-    public static final String SEARCH_URL="https://www.themealdb.com/api/json/v1/1/search.php?s=";
     final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
     List<Recipe> recipes;
@@ -43,40 +43,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         // this is where all the posts logic will go
-        RecyclerView rvRecipes = findViewById(R.id.rvRecipes);
-        recipes = new ArrayList<>();
-
-        //create the adapter
-        RecipeAdapter recipeAdapter = new RecipeAdapter(this, recipes);
-        // Set the adapter on the recycler view
-        rvRecipes.setAdapter(recipeAdapter);
-        //Set Layout Manager on the recycler view
-        rvRecipes.setLayoutManager(new LinearLayoutManager(this));
-
-        AsyncHttpClient client=new AsyncHttpClient();
-        client.get(SEARCH_URL, new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Headers headers, JSON json) {
-                Log.d(TAG,"onSuccess");
-                JSONObject jsonObject = json.jsonObject;
-                try {
-                    JSONArray meals = jsonObject.getJSONArray("meals");
-                    Log.i(TAG,"Meals:"+ meals.toString());
-                    recipes.addAll(Recipe.fromJsonArray(meals));
-                    recipeAdapter.notifyDataSetChanged();
-                    Log.i(TAG,"Recipes: " + recipes.size());
-                } catch (JSONException e) {
-                    Log.e(TAG,"Hit json exception",e);
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                Log.d(TAG,"onFailure");
-            }
-        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
@@ -85,15 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
                     case R.id.action_home:
-                        fragment = new PostsFragment(); // place holder
+                        fragment = new PostsFragment();
                         break;
                     case R.id.action_profile:
                     //    fragment = new ProfileFragment();
                         fragment = new ComposeFragment(); // place holder
                         break;
                     case R.id.action_search:
-                    //    fragment = new SearchFragment();
-                        fragment = new ComposeFragment(); // place holder
+                        fragment = new RecipeFragment();
                         break;
                     case R.id.action_compose:
                         fragment = new ComposeFragment();
