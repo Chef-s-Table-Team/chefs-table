@@ -16,11 +16,6 @@
                  
         android:theme="@style/Theme.ChefsTable"
         android:usesCleartextTraffic="true">
-  
-        <activity
-            android:name=".Detailed_recipe"
-            android:exported="true" />
-       
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -31,6 +26,13 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fileprovider" />
         </provider>
+
+
+        <activity
+            android:name=".Detailed_recipe"
+            android:exported="true" />
+       
+
 
         <activity
             android:name=".RegisterActivity"

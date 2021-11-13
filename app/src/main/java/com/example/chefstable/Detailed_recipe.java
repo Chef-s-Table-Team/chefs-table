@@ -28,7 +28,7 @@ public class Detailed_recipe extends AppCompatActivity {
         inst = findViewById(R.id.instructions);
         foodPic = findViewById(R.id.ivFood);
 
-       Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("idMeal"));
+       Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("strMeal"));
         recipeName.setText(recipe.getTitle());
         inst.setText(recipe.getInstructions());
 
