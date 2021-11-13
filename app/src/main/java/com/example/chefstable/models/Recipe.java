@@ -9,12 +9,15 @@ import java.util.List;
 
 public class Recipe {
     String mealThumb;
-    String title;
+    String title, instructions;
+    String ingredients [];
+    String measurements[];
 
 
     public Recipe(JSONObject jsonObject) throws JSONException {
         mealThumb=jsonObject.getString("strMealThumb");
         title=jsonObject.getString("strMeal");
+        instructions = jsonObject.getString("strInstructions");
     }
 
     public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException {
@@ -23,6 +26,10 @@ public class Recipe {
             recipes.add(new Recipe(recipeJsonArray.getJSONObject(i)));
         }
         return recipes;
+    }
+
+    public String getInstructions() {
+        return instructions;
     }
 
     public String getMealThumb() {

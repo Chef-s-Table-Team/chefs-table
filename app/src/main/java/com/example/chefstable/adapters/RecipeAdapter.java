@@ -15,8 +15,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.chefstable.Detailed_recipe;
 import com.example.chefstable.R;
 import com.example.chefstable.models.Recipe;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -87,7 +90,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
             imgURL = recipe.getMealThumb();
 
-            Glide.with(context).load(recipe.getMealThumb()).into(ivPoster);
+       //     Glide.with(context).load(recipe.getMealThumb()).into(ivPoster);
 
             //register click listener to whole row
 

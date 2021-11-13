@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.chefstable.models.Recipe;
+
 import org.parceler.Parcels;
 
 public class Detailed_recipe extends AppCompatActivity {
@@ -26,8 +28,9 @@ public class Detailed_recipe extends AppCompatActivity {
         inst = findViewById(R.id.instructions);
         foodPic = findViewById(R.id.ivFood);
 
-      //  Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("idMeal"));
-      //  recipeName.setText();
+       Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("idMeal"));
+        recipeName.setText(recipe.getTitle());
+        inst.setText(recipe.getInstructions());
 
 
     }
