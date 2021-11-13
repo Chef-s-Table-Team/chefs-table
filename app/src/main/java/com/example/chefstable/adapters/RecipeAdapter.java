@@ -19,9 +19,11 @@ import com.example.chefstable.Detailed_recipe;
 import com.example.chefstable.R;
 import com.example.chefstable.models.Recipe;
 
+import org.parceler.Parcel;
 import org.parceler.Parcels;
 
 import java.util.List;
+
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
     Context context;
