@@ -40,11 +40,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         if (ParseUser.getCurrentUser() != null) {
 
             go_to_main_activity();
 
         }
+
 
         etUsername = findViewById(R.id.etUsername);
 
@@ -78,19 +80,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.i(TAG, "onClick sign up button");
 
-                //get text from username + password fields, and sign up user
-
-                String user = etUsername.getText().toString();
-
-                String password = etPassword.getText().toString();
-
-                create_user(user, password);
-
+               goRegisterActivity();
             }
         });
 
     }
 
+    /*
     private void create_user(String user_, String password) {
 
 
@@ -133,6 +129,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+    */
 
     private void log_in_user(String user, String password) {
 
@@ -164,6 +161,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    private void goRegisterActivity() {
+        Intent m = new Intent(this, RegisterActivity.class);
+        startActivity(m);
+    }
+
 
     private void go_to_main_activity() {
 

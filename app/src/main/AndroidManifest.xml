@@ -16,21 +16,23 @@
                  
         android:theme="@style/Theme.ChefsTable"
         android:usesCleartextTraffic="true">
-  
-        <activity
-            android:name=".Detailed_recipe"
-            android:exported="true" />
-       
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.com.codepath.fileprovider"
+            android:authorities="com.codepath.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fileprovider" />
         </provider>
+
+
+        <activity
+            android:name=".Detailed_recipe"
+            android:exported="true" />
+       
+
 
         <activity
             android:name=".RegisterActivity"
