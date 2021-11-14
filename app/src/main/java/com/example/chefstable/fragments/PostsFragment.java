@@ -14,8 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.chefstable.Post;
-import com.example.chefstable.PostsAdapter;
+import com.example.chefstable.models.Post;
+import com.example.chefstable.adapters.PostsAdapter;
 import com.example.chefstable.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

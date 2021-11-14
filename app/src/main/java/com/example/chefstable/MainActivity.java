@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Fragment fragment;
+                Fragment fragment = new Fragment();
                 switch (menuItem.getItemId()) {
                     case R.id.action_home:
                         fragment = new PostsFragment();
@@ -74,4 +75,6 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
+
+
 }
