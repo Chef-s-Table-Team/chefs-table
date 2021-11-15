@@ -37,7 +37,6 @@ public class ComposeActivity extends AppCompatActivity {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
-    private Button btnLogout; //Added remove if needed
     private ProgressBar pbLoading;
 
     private File photoFile;
@@ -52,7 +51,6 @@ public class ComposeActivity extends AppCompatActivity {
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
-        btnLogout = findViewById(R.id.btnLogout); //Added remove if needed
         pbLoading = findViewById(R.id.pbLoading);
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
@@ -81,19 +79,6 @@ public class ComposeActivity extends AppCompatActivity {
             }
         });
 
-        btnLogout.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String curUser = ParseUser.getCurrentUser().getUsername();
-                ParseUser.logOut();
-                //Toast.makeText(MainActivity.this, "User logged out!", Toast.LENGTH_SHORT).show();
-                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
-                if(currentUser == null){
-                    Toast.makeText(ComposeActivity.this, curUser + " logged out!", Toast.LENGTH_SHORT).show();
-                }
-                goLoginActivity();
-            }
-        }));
     }
 
     private void goLoginActivity(){
