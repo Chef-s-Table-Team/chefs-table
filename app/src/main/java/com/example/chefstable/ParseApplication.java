@@ -3,7 +3,6 @@ package com.example.chefstable;
 import android.app.Application;
 
 import com.example.chefstable.models.Post;
-import com.example.chefstable.models.User;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
@@ -16,7 +15,6 @@ public class ParseApplication extends Application {
 
         // Register your parse models
         ParseObject.registerSubclass(Post.class);
-        ParseObject.registerSubclass(User.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("XXkbWs31c2ZDZ6k6AHfeu0TTaItYIvrh7Mq2VNaj")
