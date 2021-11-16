@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ComposeFragment">
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Description..."/>
+
+    <Button
+        android:id="@+id/btnCaptureImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take Picture"/>
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:srcCompat="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/tvIns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check off the stages you are completing or have completed." />
+
+    <CheckBox
+        android:id="@+id/cbPrep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preparing meal" />
+
+    <CheckBox
+        android:id="@+id/cbCook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cooking/baking meal" />
+
+    <CheckBox
+        android:id="@+id/cbReady"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meal is ready! Time to show it off!" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+</LinearLayout>

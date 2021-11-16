@@ -14,11 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.chefstable.Post;
-import com.example.chefstable.PostsAdapter;
+import com.example.chefstable.models.Post;
+import com.example.chefstable.adapters.PostsAdapter;
 import com.example.chefstable.R;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
@@ -84,6 +86,7 @@ public class PostsFragment extends Fragment {
                 if(e != null) {
                     Log.e(TAG,"Issue with getting posts",e);
                 }
+
                 for (Post post : posts) {
                     Log.i(TAG, "Post:" + post.getDescription() + ",username: " + post.getUser().getUsername());
                 }
