@@ -48,6 +48,8 @@ public class DetailedRecipeActivity extends AppCompatActivity {
 
     private void goCompose() {
        Intent c = new Intent(this, ComposeActivity.class);
+       // we need to add a putExtra in order to pass the name of the recipe onto the ComposeFragment!
+        //display it in the textview and allow them to edit from there
        startActivity(c);
 
     }
