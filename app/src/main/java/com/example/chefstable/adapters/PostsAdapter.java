@@ -1,4 +1,4 @@
-package com.example.chefstable;
+package com.example.chefstable.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.chefstable.R;
+import com.example.chefstable.models.Post;
 import com.parse.ParseFile;
 
 import java.util.List;
@@ -66,7 +68,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvUser1 = itemView.findViewById(R.id.tvUser1);
             tvCaption = itemView.findViewById(R.id.tvCaption);
             ivPost = itemView.findViewById(R.id.ivPost);
-            ivProf1 = itemView.findViewById(R.id.ivProf1);
+            ivProf1 = itemView.findViewById(R.id.ivProf1); // profile picture
         }
 
         public void bind(Post post) {
@@ -75,15 +77,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvUser1.setText(post.getUser().getUsername());
             // make sure to add profile picture snippet
             ParseFile image = post.getImage(); // get the picture
-            ParseFile profile = post.getProfile();
+            ParseFile profile = post.getProfilePicture();
+
+
             if (image != null) {
                 // we need to import Glide libraries
                 Glide.with(context).load(post.getImage().getUrl()).into(ivPost);
             }
-            if (profile != null) {
-                Glide.with(context).load(post.getProfile().getUrl()).into(ivProf1);
+            if (profile != null) { // profile
+                Glide.with(context).load(post.getProfilePicture().getUrl()).into(ivProf1);
             }
         }
+
     }
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.chefstable;
+package com.example.chefstable.models;
 
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
@@ -13,11 +13,13 @@ public class Post extends ParseObject {
     public static final String KEY_CREATED_KEY = "createdAt";
     public static final String KEY_PROFILE = "profile";
     
-    public ParseFile getProfile () { return getParseFile(KEY_PROFILE); }
+    public ParseFile getProfilePicture () { return getUser().getParseFile(KEY_PROFILE); }
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);
     }
+
+
 
     public void setDescription(String description) {
         put(KEY_DESCRIPTION, description);

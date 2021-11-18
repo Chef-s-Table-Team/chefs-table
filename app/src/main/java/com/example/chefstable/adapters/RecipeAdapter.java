@@ -2,7 +2,6 @@ package com.example.chefstable.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.chefstable.Detailed_recipe;
+import com.example.chefstable.DetailedRecipeActivity;
 import com.example.chefstable.R;
 import com.example.chefstable.models.Recipe;
 
 import org.parceler.Parcels;
 
 import java.util.List;
+
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
     Context context;
@@ -99,7 +99,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                 public void onClick(View view) {
                     //go to detail recipe
 
-                    Intent i = new Intent(context, Detailed_recipe.class); //import qian + maria's file
+                    Intent i = new Intent(context, DetailedRecipeActivity.class); //import qian + maria's file
 
                     i.putExtra("strMeal", Parcels.wrap(recipe)); //how does line work again?
 

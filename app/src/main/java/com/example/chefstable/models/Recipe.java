@@ -3,16 +3,19 @@ package com.example.chefstable.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Recipe {
     String mealThumb;
     String title, instructions;
     String ingredients [];
     String measurements[];
 
+    public Recipe () {}
 
     public Recipe(JSONObject jsonObject) throws JSONException {
         mealThumb=jsonObject.getString("strMealThumb");
