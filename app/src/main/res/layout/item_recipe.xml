@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_margin="8dp"
+    android:background="#FFEBA2"
+    android:backgroundTint="#FFEBA2"
     android:padding="8dp">
 
     <ImageView
@@ -26,5 +28,6 @@
         android:layout_marginStart="7dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         tools:text="Spicy Arrabiata Penne" />
 </RelativeLayout>

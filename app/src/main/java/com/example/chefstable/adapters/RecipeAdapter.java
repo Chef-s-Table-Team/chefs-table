@@ -101,8 +101,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
                     Intent i = new Intent(context, DetailedRecipeActivity.class); //import qian + maria's file
 
-                    i.putExtra("strMeal", Parcels.wrap(recipe)); //how does line work again?
-
+                    i.putExtra("strMeal", Parcels.wrap(recipe)); // pass the strMeal to a recipe object so it can hold it
                     context.startActivity(i);
 
                 }

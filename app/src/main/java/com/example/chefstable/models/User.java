@@ -3,10 +3,12 @@ package com.example.chefstable.models;
 import static com.example.chefstable.models.Post.KEY_USER;
 
 import com.parse.Parse;
+import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+@ParseClassName(("User"))
 public class User extends ParseObject {
     public static final String KEY_BIO = "bio";
     public static final String KEY_NUMPOSTS = "numPosts";
@@ -21,9 +23,8 @@ public class User extends ParseObject {
 
     // setters
     public void setBio (String s) { put(KEY_BIO, s); }
-    public void setPostCount(int p) {put(KEY_NUMPOSTS, p);}
+    public void setPostCount(int p) {put(KEY_NUMPOSTS, p);} // post count
     public void setProfile(ParseFile prof) {put(KEY_PROFILE, prof);}
-
 
 
 

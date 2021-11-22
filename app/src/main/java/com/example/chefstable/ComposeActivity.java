@@ -2,6 +2,7 @@ package com.example.chefstable;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
@@ -14,12 +15,15 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.chefstable.models.Post;
+import com.mackhartley.roundedprogressbar.RoundedProgressBar;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -37,7 +41,9 @@ public class ComposeActivity extends AppCompatActivity {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
-    private ProgressBar pbLoading;
+    private RoundedProgressBar chefProgress;
+    private CheckBox cbCook, cbReady, cbPrep;
+
 
     private File photoFile;
     public String photoFileName = "photo.jpg";
@@ -51,7 +57,12 @@ public class ComposeActivity extends AppCompatActivity {
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
-        pbLoading = findViewById(R.id.pbLoading);
+        chefProgress = findViewById(R.id.chefProgress); // progress bar
+        cbPrep = findViewById(R.id.cbPrep);
+        cbCook = findViewById(R.id.cbCook);
+        cbReady = findViewById(R.id.cbReady);
+
+
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +86,8 @@ public class ComposeActivity extends AppCompatActivity {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+                // update the numPosts for that currrent logged in user
+
                 goMainActiv();
             }
         });
@@ -88,7 +101,7 @@ public class ComposeActivity extends AppCompatActivity {
     }
 
     private void launchCamera(){
-        pbLoading.setVisibility(View.INVISIBLE);
+
         // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Create a File reference for future access
@@ -155,7 +168,7 @@ public class ComposeActivity extends AppCompatActivity {
                 Log.i(TAG, "Post save was successful!");
                 etDescription.setText("");
                 ivPostImage.setImageResource(0);
-                pbLoading.setVisibility(View.VISIBLE);
+
             }
         });
     }
@@ -184,5 +197,29 @@ public class ComposeActivity extends AppCompatActivity {
 
         startActivity(i);
 
+    }
+
+    public void onCheckBoxClicked(View v) {
+        boolean checked = ((CheckBox) v).isChecked();
+        switch (v.getId()) {
+            case R.id.cbPrep:
+                if (checked) {
+                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbPrep));
+                    chefProgress.setBackgroundColor(getResources().getColor(R.color.pbPrep));
+                    Log.d("COLOR PB", "CB PREP...Made it here");
+                }
+                break;
+            case R.id.cbCook:
+                if (checked) {
+                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbCook));
+
+                }
+                break;
+            case R.id.cbReady:
+                if (checked) {
+                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbReady));
+                }
+                break;
+        }
     }
 }

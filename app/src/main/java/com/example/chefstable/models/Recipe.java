@@ -21,6 +21,7 @@ public class Recipe {
         mealThumb=jsonObject.getString("strMealThumb");
         title=jsonObject.getString("strMeal");
         instructions = jsonObject.getString("strInstructions");
+
     }
 
     public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException {

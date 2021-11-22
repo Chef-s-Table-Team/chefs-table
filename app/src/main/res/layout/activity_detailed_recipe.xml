@@ -8,42 +8,42 @@
     android:orientation="vertical"
     tools:context=".DetailedRecipeActivity">
 
+    <ImageView
+        android:id="@+id/ivLogoD"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/receipe_name"
+        app:srcCompat="@drawable/chefstablelogo" />
+
     <TextView
         android:id="@+id/receipe_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/ivLogoD"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="48dp"
+        android:background="#FFF5A2"
         android:text="cheesecake"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/ingredient_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivFood"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="247dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="233dp"
         android:text="ingredient list" />
-
-    <ImageView
-        android:id="@+id/ivFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/receipe_name"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="138dp"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/instructions"
@@ -51,8 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ingredient_list"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="98dp"
         android:text="Instructions of food making" />
 
     <Button
@@ -61,8 +62,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="208dp"
         android:text="Try recipe"
         android:textSize="10sp" />
 </RelativeLayout>
