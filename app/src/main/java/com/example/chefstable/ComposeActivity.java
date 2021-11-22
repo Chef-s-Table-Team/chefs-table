@@ -53,6 +53,8 @@ public class ComposeActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.btnSubmit);
         pbLoading = findViewById(R.id.pbLoading);
 
+
+
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +77,7 @@ public class ComposeActivity extends AppCompatActivity {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+
                 goMainActiv();
             }
         });

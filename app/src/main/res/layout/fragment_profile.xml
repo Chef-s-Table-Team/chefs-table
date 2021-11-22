@@ -67,7 +67,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvNumPosts"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
         android:layout_alignParentEnd="true"

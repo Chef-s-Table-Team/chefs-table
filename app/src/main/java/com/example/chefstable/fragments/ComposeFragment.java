@@ -50,6 +50,7 @@ public class ComposeFragment extends Fragment {
     private Button btnLogout; //Added remove if needed
     private ProgressBar pbLoading;
 
+
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
@@ -100,7 +101,6 @@ public class ComposeFragment extends Fragment {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
-
             }
         });
 
