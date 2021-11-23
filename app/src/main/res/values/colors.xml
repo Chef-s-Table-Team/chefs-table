@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pbPrep">#b80419</color>
+    <color name="pbCook">#ffd240</color>
+    <color name="pbReady">#6bb030</color>
+    <color name="chefsBackground"> #fae77a</color>
+    <color name="chefsPrimary"> #ffffff</color>
+    <color name="chefSubtle"> #ba7506</color>
 </resources>

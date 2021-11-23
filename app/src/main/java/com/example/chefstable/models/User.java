@@ -23,9 +23,8 @@ public class User extends ParseObject {
 
     // setters
     public void setBio (String s) { put(KEY_BIO, s); }
-    public void setPostCount(int p) {put(KEY_NUMPOSTS, p);}
+    public void setPostCount(int p) {put(KEY_NUMPOSTS, p);} // post count
     public void setProfile(ParseFile prof) {put(KEY_PROFILE, prof);}
-
 
 
 
