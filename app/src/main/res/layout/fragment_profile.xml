@@ -7,11 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/ivLogoP"
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:src="@drawable/chefstablelogo" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,21 +14,20 @@
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="84dp"
-        android:layout_below="@id/ivLogoP"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="87dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvUser"
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
+        android:layout_width="263dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
 
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="93dp"
         android:layout_marginEnd="17dp"
-        android:layout_below="@id/ivLogoP"
+
 
         android:text="chef"
         android:textSize="24sp"
@@ -102,7 +96,7 @@
         android:id="@+id/swipeContainerProfile"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@+id/textView3"
+
         android:layout_alignParentBottom="true"
         >
 

@@ -35,13 +35,7 @@ public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
 
-
     private RecyclerView rvProfilePosts;
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
     protected PostsAdapter profileAdapter;
 
@@ -51,16 +45,13 @@ public class ProfileFragment extends Fragment {
 
 
     public ProfileFragment() {
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile, container, false);
-
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -107,6 +98,5 @@ public class ProfileFragment extends Fragment {
             }
         });
     } //retrieve all posts
-
 
 }
