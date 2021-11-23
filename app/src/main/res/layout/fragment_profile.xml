@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="7dp"
@@ -19,35 +19,36 @@
 
     <TextView
         android:id="@+id/tvUser"
-        android:layout_width="267dp"
+        android:layout_width="match_parent"
         android:layout_height="39dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="13dp"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/imageView"
         android:text="chef"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvBio"
-        android:layout_width="375dp"
-        android:layout_height="98dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tvAbMe"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="182dp"
+        android:layout_marginTop="10dp"
         android:text="I love cooking food!" />
 
     <TextView
         android:id="@+id/tvAbMe"
         android:layout_width="82dp"
         android:layout_height="29dp"
+        android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="143dp"
+        android:layout_marginTop="10dp"
         android:autoText="false"
         android:clickable="false"
         android:text="About Me:"
@@ -58,9 +59,10 @@
         android:id="@+id/tvRcp"
         android:layout_width="156dp"
         android:layout_height="35dp"
+        android:layout_below="@+id/tvBio"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="38dp"
         android:layout_marginBottom="262dp"
         android:text="Recipes Completed:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -70,11 +72,28 @@
         android:id="@+id/tvNumPosts"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginEnd="214dp"
-        android:layout_marginBottom="262dp"
+        android:layout_alignRight="@+id/tvRcp"
+        android:layout_below="@+id/tvBio"
+        android:layout_marginTop="38dp"
         android:text="25"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentBottom="true"
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfilePosts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </RelativeLayout>

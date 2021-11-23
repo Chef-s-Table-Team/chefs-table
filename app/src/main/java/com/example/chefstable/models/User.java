@@ -7,6 +7,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+
 @ParseClassName(("User"))
 public class User extends ParseObject {
     public static final String KEY_BIO = "bio";

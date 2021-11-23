@@ -17,6 +17,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.chefstable.adapters.RecipeAdapter;
 import com.example.chefstable.fragments.ComposeFragment;
 import com.example.chefstable.fragments.PostsFragment;
+import com.example.chefstable.fragments.ProfileFragment;
 import com.example.chefstable.fragments.RecipeFragment;
 import com.example.chefstable.models.Recipe;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_profile:
                     //    fragment = new ProfileFragment();
-                        fragment = new ComposeFragment(); // place holder
+                        fragment = new ProfileFragment(); // place holder
                         break;
                     case R.id.action_search:
                         fragment = new RecipeFragment();
