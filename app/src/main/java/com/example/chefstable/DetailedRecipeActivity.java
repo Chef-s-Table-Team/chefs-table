@@ -22,7 +22,7 @@ public class DetailedRecipeActivity extends AppCompatActivity {
     Button tryBtn;
     TextView recipeName, ingList, inst;
     ImageView foodPic; // image for food pulled from api
-    Context conts;
+
 
 
     @Override
@@ -47,7 +47,6 @@ public class DetailedRecipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                goCompose();
-
             }
         });
 

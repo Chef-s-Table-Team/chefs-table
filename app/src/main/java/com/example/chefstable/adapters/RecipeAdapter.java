@@ -72,7 +72,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout container;
-        TextView tvTitle;
+        TextView tvTitle, tvCategory, tvArea;
         ImageView ivPoster;
 
         public ViewHolder(@NonNull View itemView) {
@@ -80,10 +80,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             tvTitle=itemView.findViewById(R.id.tvTitle);
             ivPoster=itemView.findViewById(R.id.ivPoster);
             container = itemView.findViewById(R.id.container);
+            tvCategory = itemView.findViewById(R.id.tvCategory);
+            tvArea = itemView.findViewById(R.id.tvArea);
         }
 
         public void bind(Recipe recipe) {
             tvTitle.setText(recipe.getTitle());
+            tvCategory.setText(recipe.getCategory());
+            tvArea.setText(recipe.getArea());
+
             String imgURL;
 
             //get thumbnail for recipe

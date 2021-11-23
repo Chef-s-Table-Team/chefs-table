@@ -8,64 +8,90 @@
     android:orientation="vertical"
     tools:context=".DetailedRecipeActivity">
 
-    <ImageView
-        android:id="@+id/ivLogoD"
-        android:layout_width="match_parent"
-        android:layout_height="76dp"
-        app:layout_constraintBottom_toTopOf="@+id/receipe_name"
-        app:srcCompat="@drawable/chefstablelogo" />
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:id="@+id/ivLogoD"
+               android:layout_width="match_parent"
+               android:layout_height="76dp"
+               app:layout_constraintBottom_toTopOf="@+id/receipe_name"
+               app:srcCompat="@drawable/chefstablelogo" />
 
-    <TextView
-        android:id="@+id/receipe_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ivLogoD"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="48dp"
-        android:background="#FFF5A2"
-        android:text="cheesecake"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="20sp" />
+           <TextView
+               android:id="@+id/receipe_name"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/ivLogoD"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentEnd="true"
+               android:layout_centerHorizontal="true"
+               android:layout_marginStart="51dp"
+               android:layout_marginTop="85dp"
+               android:layout_marginEnd="48dp"
+               android:background="#FFF5A2"
+               android:text="cheesecake"
+               android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+               android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/ingredient_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="166dp"
-        android:layout_marginEnd="233dp"
-        android:text="ingredient list" />
+           <TextView
+               android:id="@+id/tvIngLogo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentTop="true"
+               android:layout_marginStart="10dp"
+               android:layout_marginTop="197dp"
+               android:text="INSTRUCTIONS"
+               android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/instructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ingredient_list"
-        android:layout_alignParentStart="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="98dp"
-        android:text="Instructions of food making" />
+           <TextView
+               android:id="@+id/ingredient_list"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentTop="true"
+               android:layout_alignParentEnd="true"
+               android:layout_centerHorizontal="true"
+               android:layout_marginStart="44dp"
+               android:layout_marginTop="166dp"
+               android:layout_marginEnd="233dp"
+               android:background="#8AAE741C"
+               android:text="ingredient list" />
 
-    <Button
-        android:id="@+id/try_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="208dp"
-        android:text="Try recipe"
-        android:textSize="10sp" />
+           <TextView
+               android:id="@+id/instructions"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/ingredient_list"
+               android:layout_alignParentStart="true"
+               android:layout_centerInParent="true"
+               android:layout_marginStart="5dp"
+               android:layout_marginTop="37dp"
+               android:layout_marginEnd="8dp"
+               android:layout_marginBottom="8dp"
+               android:background="#FFF594"
+               android:gravity="center"
+               android:text="Instructions of food making"
+               android:textAlignment="center" />
+
+           <Button
+               android:id="@+id/try_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/instructions"
+               android:layout_alignParentStart="true"
+               android:layout_centerHorizontal="true"
+               android:layout_marginStart="156dp"
+               android:layout_marginTop="127dp"
+               android:text="Try recipe"
+               android:textSize="10sp" />
+       </RelativeLayout>
+   </ScrollView>
 </RelativeLayout>
+
 

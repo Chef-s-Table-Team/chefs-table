@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.chefstable.models.Post;
+import com.example.chefstable.models.Recipe;
 import com.mackhartley.roundedprogressbar.RoundedProgressBar;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -30,6 +31,8 @@ import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import org.parceler.Parcels;
 
 import java.io.File;
 import java.util.List;
@@ -75,7 +78,8 @@ public class ComposeActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String description = etDescription.getText().toString();
+                Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("strMeal"));
+                String description = recipe.getTitle() +  etDescription.getText().toString();
                 if(description.isEmpty()){
                     Toast.makeText(ComposeActivity.this, "Description cannot be empty!", Toast.LENGTH_SHORT).show();
                     return;
