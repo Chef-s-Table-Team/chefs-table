@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
+    android:background="#FFEBA2"
     android:orientation="vertical">
 
     <ImageView
@@ -27,21 +28,22 @@
         android:textStyle="bold" />
 
     <com.mackhartley.roundedprogressbar.RoundedProgressBar
-        android:id="@+id/roundedProgressBar"
+        android:id="@+id/chefProgress"
         android:layout_width="245dp"
         android:layout_height="19dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        app:rpbBackgroundColor="#fccb4e"
+        app:rpbBackgroundColor="#A19F9B"
         app:rpbCornerRadius="20dp"
-        app:rpbProgressColor="#ffe39c"
+        app:rpbProgressColor="#F3E9D2"
         app:rpbShowProgressText="false" />
 
     <ImageView
         android:id="@+id/ivPost"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/ivProf1" tools:srcCompat="@tools:sample/avatars" />
+        android:layout_below="@id/ivProf1"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvCaption"
@@ -58,7 +60,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_below="@id/tvCaption"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/tvCaption"/>
+        android:layout_marginBottom="10dp" />
 </RelativeLayout>
