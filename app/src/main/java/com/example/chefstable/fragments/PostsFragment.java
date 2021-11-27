@@ -22,6 +22,7 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ public class PostsFragment extends Fragment {
     protected PostsAdapter adapter;
     protected List<Post> allPosts;
     SwipeRefreshLayout swipeContainer;
+
+    private Object KEY_USER;
 
     public PostsFragment() {
         // Required empty public constructor
@@ -54,6 +57,7 @@ public class PostsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPosts=view.findViewById(R.id.rvPosts);
+
 
         allPosts=new ArrayList<>();
         adapter=new PostsAdapter(getContext(),allPosts);
@@ -80,6 +84,7 @@ public class PostsFragment extends Fragment {
         query.include(Post.KEY_USER);
         query.setLimit(20);
         query.addDescendingOrder(Post.KEY_CREATED_KEY);
+
         query.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
@@ -98,4 +103,9 @@ public class PostsFragment extends Fragment {
         });
 
     }
+
+
+
+
+
 }

@@ -19,20 +19,24 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.chefstable.R;
 
+
 import com.example.chefstable.models.User;
 
-
 import com.example.chefstable.adapters.PostsAdapter;
+
 import com.example.chefstable.models.Post;
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseQuery;
+
+
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 public class ProfileFragment extends Fragment {
@@ -57,7 +61,10 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile, container, false);
+
+
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -110,3 +117,4 @@ public class ProfileFragment extends Fragment {
     } //retrieve all posts
 
 }
+

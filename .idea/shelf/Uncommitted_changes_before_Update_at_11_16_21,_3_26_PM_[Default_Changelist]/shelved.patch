@@ -1,0 +1,157 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch	(revision ceccea8c1866e896d49e8bd3bef3385c2097da12)
++++ /dev/null	(revision ceccea8c1866e896d49e8bd3bef3385c2097da12)
+@@ -1,34 +0,0 @@
+-Index: .idea/vcs.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+-new file mode 100644
+---- /dev/null	(date 1636063598584)
+-+++ b/.idea/vcs.xml	(date 1636063598584)
+-@@ -0,0 +1,6 @@
+-+<?xml version="1.0" encoding="UTF-8"?>
+-+<project version="4">
+-+  <component name="VcsDirectoryMappings">
+-+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-+  </component>
+-+</project>
+-\ No newline at end of file
+-Index: .idea/gradle.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"GRADLE\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"Embedded JDK\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+---- a/.idea/gradle.xml	(revision 7a07b35c9527e6aa3d3ccb79d28ce8d3b68e8ad4)
+-+++ b/.idea/gradle.xml	(date 1636495649537)
+-@@ -1,5 +1,6 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="GradleMigrationSettings" migrationVersion="1" />
+-   <component name="GradleSettings">
+-     <option name="linkedExternalProjectsSettings">
+-       <GradleProjectSettings>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml	(revision ceccea8c1866e896d49e8bd3bef3385c2097da12)
++++ /dev/null	(revision ceccea8c1866e896d49e8bd3bef3385c2097da12)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]" date="1636496146578" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/9/21, 2:15 PM [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1636861830957)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]/shelved.patch	(date 1636861830957)
+@@ -0,0 +1,79 @@
++Index: app/src/main/java/com/example/chefstable/Detailed_recipe.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package com.example.chefstable;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.os.Bundle;\n\npublic class Detailed_recipe extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_detailed_recipe);\n    }\n\n\n\n}
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/app/src/main/java/com/example/chefstable/Detailed_recipe.java b/app/src/main/java/com/example/chefstable/Detailed_recipe.java
++--- a/app/src/main/java/com/example/chefstable/Detailed_recipe.java	(revision 828a0c19fdb76b6640dc7746de6ce11d42ee4418)
+++++ b/app/src/main/java/com/example/chefstable/Detailed_recipe.java	(date 1636673836065)
++@@ -11,7 +11,6 @@
++         super.onCreate(savedInstanceState);
++         setContentView(R.layout.activity_detailed_recipe);
++     }
++-
+++    
++ 
++-
++ }
++\ No newline at end of file
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch
++new file mode 100644
++--- /dev/null	(date 1636496133878)
+++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch	(date 1636496133878)
++@@ -0,0 +1,34 @@
+++Index: .idea/vcs.xml
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+++new file mode 100644
+++--- /dev/null	(date 1636063598584)
++++++ b/.idea/vcs.xml	(date 1636063598584)
+++@@ -0,0 +1,6 @@
++++<?xml version="1.0" encoding="UTF-8"?>
++++<project version="4">
++++  <component name="VcsDirectoryMappings">
++++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++++  </component>
++++</project>
+++\ No newline at end of file
+++Index: .idea/gradle.xml
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"GRADLE\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"Embedded JDK\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+++--- a/.idea/gradle.xml	(revision 7a07b35c9527e6aa3d3ccb79d28ce8d3b68e8ad4)
++++++ b/.idea/gradle.xml	(date 1636495649537)
+++@@ -1,5 +1,6 @@
+++ <?xml version="1.0" encoding="UTF-8"?>
+++ <project version="4">
++++  <component name="GradleMigrationSettings" migrationVersion="1" />
+++   <component name="GradleSettings">
+++     <option name="linkedExternalProjectsSettings">
+++       <GradleProjectSettings>
++Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml
++new file mode 100644
++--- /dev/null	(date 1636861826562)
+++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21__2_15_PM__Default_Changelist_.xml	(date 1636861826562)
++@@ -0,0 +1,4 @@
+++<changelist name="Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]" date="1636496146578" recycled="true" deleted="true">
+++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_21,_2_15_PM_[Default_Changelist]/shelved.patch" />
+++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/9/21, 2:15 PM [Default Changelist]" />
+++</changelist>
++\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_11_13_21__7_50_PM__Default_Changelist_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21__7_50_PM__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21__7_50_PM__Default_Changelist_.xml
+new file mode 100644
+--- /dev/null	(date 1637103334621)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21__7_50_PM__Default_Changelist_.xml	(date 1637103334621)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]" date="1636861833360" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_13_21,_7_50_PM_[Default_Changelist]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/13/21, 7:50 PM [Default Changelist]" />
++</changelist>
+\ No newline at end of file

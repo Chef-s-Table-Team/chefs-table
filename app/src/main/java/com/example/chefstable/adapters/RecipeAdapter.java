@@ -92,7 +92,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             String imgURL;
 
             //get thumbnail for recipe
-
             imgURL = recipe.getMealThumb();
 
            Glide.with(context).load(recipe.getMealThumb()).into(ivPoster);
@@ -103,10 +102,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     //go to detail recipe
-
                     Intent i = new Intent(context, DetailedRecipeActivity.class); //import qian + maria's file
 
+
                     i.putExtra("strMeal", Parcels.wrap(recipe)); // pass the strMeal to a recipe object so it can hold it
+
                     context.startActivity(i);
 
                 }

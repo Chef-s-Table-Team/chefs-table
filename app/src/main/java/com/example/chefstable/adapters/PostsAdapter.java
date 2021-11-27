@@ -1,7 +1,13 @@
 package com.example.chefstable.adapters;
 
 import android.content.Context;
+
+import android.content.Intent;
+import android.os.Parcelable;
+import android.util.Log;
+
 import android.graphics.Color;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +22,12 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+
+import com.example.chefstable.DetailedRecipeActivity;
+import com.example.chefstable.ProfileActivity;
+
 import com.example.chefstable.ComposeActivity;
+
 import com.example.chefstable.R;
 import com.example.chefstable.models.Post;
 import com.mackhartley.roundedprogressbar.RoundedProgressBar;
@@ -97,6 +108,17 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (profile != null) { // profile
                 Glide.with(context).load(post.getProfilePicture().getUrl()).into(ivProf1);
             }
+
+
+            tvUser1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, ProfileActivity.class);
+                    Log.i("test","" + post.getUser());
+                    i.putExtra("post", (Parcelable) post);
+                    context.startActivity(i);
+                }
+            });
 
         }
 

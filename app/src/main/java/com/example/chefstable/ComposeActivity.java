@@ -67,6 +67,8 @@ public class ComposeActivity extends AppCompatActivity {
 
 
 
+
+
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +92,7 @@ public class ComposeActivity extends AppCompatActivity {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+
                 // update the numPosts for that currrent logged in user
 
                 goMainActiv();

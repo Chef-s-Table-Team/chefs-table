@@ -5,7 +5,9 @@ import android.app.Application;
 import com.example.chefstable.models.Post;
 import com.example.chefstable.models.User;
 import com.parse.Parse;
+import com.parse.ParseClassName;
 import com.parse.ParseObject;
+
 
 public class ParseApplication extends Application {
 
