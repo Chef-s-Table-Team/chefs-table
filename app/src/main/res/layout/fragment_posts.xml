@@ -14,7 +14,7 @@
             android:id="@+id/rvPosts"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FAE77A"
+            android:background="#F7E4D1"
             android:padding="8dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </FrameLayout>
