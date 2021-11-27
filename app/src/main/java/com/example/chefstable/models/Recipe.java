@@ -11,7 +11,7 @@ import java.util.List;
 @Parcel
 public class Recipe {
     String mealThumb;
-    String title, instructions;
+    String title, instructions,category, area;
     String ingredients [];
     String measurements[];
 
@@ -21,6 +21,9 @@ public class Recipe {
         mealThumb=jsonObject.getString("strMealThumb");
         title=jsonObject.getString("strMeal");
         instructions = jsonObject.getString("strInstructions");
+        category = jsonObject.getString("strCategory");
+        area = jsonObject.getString("strArea");
+
     }
 
     public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException {
@@ -30,6 +33,9 @@ public class Recipe {
         }
         return recipes;
     }
+
+    public String getCategory() { return category;}
+    public String getArea(){return area;}
 
     public String getInstructions() {
         return instructions;

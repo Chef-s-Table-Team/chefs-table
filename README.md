@@ -2,7 +2,8 @@ Original App Design Project - README Template
 ===
 
 # Chef's Table
-
+# Milestone 4
+<img src = 'https://github.com/Chef-s-Table-Team/chefs-table/blob/master/chefmilestone4.gif'/>
 ## Milestone 3
 <img src = 'https://github.com/Chef-s-Table-Team/chefs-table/blob/master/chefmilestone3.gif'/>
 

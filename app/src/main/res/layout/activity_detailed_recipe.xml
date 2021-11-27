@@ -5,65 +5,96 @@
     android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7E4D1"
     android:orientation="vertical"
     tools:context=".DetailedRecipeActivity">
 
-    <TextView
-        android:id="@+id/receipe_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:text="cheesecake"
-        android:textSize="20sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/ingredient_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ivFood"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="247dp"
-        android:text="ingredient list" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/ivFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/receipe_name"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="138dp"
-        tools:srcCompat="@tools:sample/avatars" />
+            <ImageView
+                android:id="@+id/ivLogoD"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                app:layout_constraintBottom_toTopOf="@+id/receipe_name"
+                app:srcCompat="@drawable/chefstablelogo" />
 
-    <TextView
-        android:id="@+id/instructions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ingredient_list"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="Instructions of food making" />
+            <TextView
+                android:id="@+id/receipe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivLogoD"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginEnd="48dp"
+                android:background="#FFF5A2"
+                android:text="cheesecake"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/try_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="50dp"
-        android:text="Try recipe"
-        android:textSize="10sp" />
+            <TextView
+                android:id="@+id/tvIngLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="197dp"
+                android:text="INSTRUCTIONS"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ingredient_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="166dp"
+                android:layout_marginEnd="233dp"
+                android:background="#8AAE741C"
+                android:text="ingredient list" />
+
+            <TextView
+                android:id="@+id/instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ingredient_list"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="37dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#FFF594"
+                android:gravity="center"
+                android:text="Instructions of food making"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/try_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/instructions"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="156dp"
+                android:layout_marginTop="127dp"
+                android:text="Try recipe"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
+
 

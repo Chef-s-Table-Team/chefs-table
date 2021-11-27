@@ -5,7 +5,9 @@
     android:id="@+id/tvNumRecipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7E4D1"
     tools:context=".fragments.ProfileFragment">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -13,33 +15,40 @@
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="87dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvUser"
-        android:layout_width="match_parent"
-        android:layout_height="39dp"
+        android:layout_width="263dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginStart="10dp"
-        android:layout_toRightOf="@+id/imageView"
+
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="17dp"
+
+
         android:text="chef"
+        android:textColor="#5F3330"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvBio"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@+id/tvAbMe"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:text="I love cooking food!" />
+
+        android:layout_width="375dp"
+        android:layout_height="98dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_centerInParent="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="260dp"
+        android:text="I love cooking food!"
+        android:textColor="#5F3330"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/tvAbMe"
@@ -47,12 +56,16 @@
         android:layout_height="29dp"
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="221dp"
+
         android:autoText="false"
         android:clickable="false"
         android:text="About Me:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#5F3330"
         android:textStyle="bold" />
 
     <TextView
@@ -61,30 +74,39 @@
         android:layout_height="35dp"
         android:layout_below="@+id/tvBio"
         android:layout_alignParentStart="true"
+
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="262dp"
+        android:layout_marginBottom="206dp"
+
         android:text="Recipes Completed:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#5F3330"
         android:textStyle="bold" />
 
     <TextView
+
         android:id="@+id/tvNumPosts"
+
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:layout_alignRight="@+id/tvRcp"
-        android:layout_below="@+id/tvBio"
-        android:layout_marginTop="38dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="208dp"
+
         android:text="25"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainerProfile"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_below="@+id/textView3"
+
         android:layout_alignParentBottom="true"
-        >
+        android:background="#F3EAE2">
 
 
         <androidx.recyclerview.widget.RecyclerView

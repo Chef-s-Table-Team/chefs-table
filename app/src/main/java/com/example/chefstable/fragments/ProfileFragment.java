@@ -13,14 +13,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.chefstable.R;
+
+
+import com.example.chefstable.models.User;
 
 import com.example.chefstable.adapters.PostsAdapter;
 
 import com.example.chefstable.models.Post;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseQuery;
 
 
@@ -37,6 +45,8 @@ public class ProfileFragment extends Fragment {
 
     private RecyclerView rvProfilePosts;
 
+    ImageView profPic;
+    TextView tvUser, tvBio;
     protected PostsAdapter profileAdapter;
 
     protected List<Post> allProfilePosts;
@@ -59,7 +69,10 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        ParseUser user = ParseUser.getCurrentUser(); // stores the current user that is logged in
+        profPic = view.findViewById(R.id.imageView);
+        tvUser = view.findViewById(R.id.tvUser);
+        tvBio = view.findViewById(R.id.tvBio);
         rvProfilePosts = view.findViewById(R.id.rvProfilePosts);
         swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainerProfile);
 
@@ -68,6 +81,7 @@ public class ProfileFragment extends Fragment {
         rvProfilePosts.setAdapter(profileAdapter);
         rvProfilePosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        Glide.with(view).load(ParseUser.getCurrentUser().getParseFile("profile")).into(profPic);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

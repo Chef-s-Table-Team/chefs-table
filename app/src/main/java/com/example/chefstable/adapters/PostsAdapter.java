@@ -1,23 +1,36 @@
 package com.example.chefstable.adapters;
 
 import android.content.Context;
+
 import android.content.Intent;
 import android.os.Parcelable;
 import android.util.Log;
+
+import android.graphics.Color;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+
 import com.example.chefstable.DetailedRecipeActivity;
 import com.example.chefstable.ProfileActivity;
+
+import com.example.chefstable.ComposeActivity;
+
 import com.example.chefstable.R;
 import com.example.chefstable.models.Post;
+import com.mackhartley.roundedprogressbar.RoundedProgressBar;
 import com.parse.ParseFile;
 
 import java.util.List;
@@ -68,12 +81,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private ImageView ivProf1, ivPost;
         private TextView tvUser1, tvCaption;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvUser1 = itemView.findViewById(R.id.tvUser1);
             tvCaption = itemView.findViewById(R.id.tvCaption);
             ivPost = itemView.findViewById(R.id.ivPost);
             ivProf1 = itemView.findViewById(R.id.ivProf1); // profile picture
+
         }
 
         public void bind(Post post) {
@@ -85,6 +100,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             ParseFile profile = post.getProfilePicture();
 
 
+
             if (image != null) {
                 // we need to import Glide libraries
                 Glide.with(context).load(post.getImage().getUrl()).into(ivPost);
@@ -92,6 +108,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (profile != null) { // profile
                 Glide.with(context).load(post.getProfilePicture().getUrl()).into(ivProf1);
             }
+
 
             tvUser1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -102,6 +119,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     context.startActivity(i);
                 }
             });
+
         }
 
     }

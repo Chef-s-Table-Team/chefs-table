@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:layout_margin="8dp"
+    android:background="#FFD65C"
     android:padding="8dp">
 
     <ImageView
@@ -26,5 +27,31 @@
         android:layout_marginStart="7dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
+        android:textStyle="bold|italic"
         tools:text="Spicy Arrabiata Penne" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="158dp"
+        android:layout_height="37dp"
+        android:layout_alignRight="@+id/ivPoster"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="-201dp"
+        android:layout_marginBottom="87dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvArea"
+        android:layout_width="167dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/tvTitle"
+        android:layout_alignRight="@+id/ivPoster"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="41dp"
+        android:text="TextView" />
 </RelativeLayout>

@@ -4,22 +4,22 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/chefhat"
         android:title="Home"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/recipes"
         android:title="Search"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_profile"
-        android:icon="@drawable/ic_baseline_person_24"
+        android:icon="@drawable/cook"
         android:title="Profile"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_compose"
-        android:icon="@drawable/ic_baseline_add_circle_24"
+        android:icon="@drawable/compose"
         android:title="Compose"
         app:showAsAction="always" />
 </menu>
