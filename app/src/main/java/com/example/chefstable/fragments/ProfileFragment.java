@@ -47,12 +47,12 @@ public class ProfileFragment extends Fragment {
 
     public static final String TAG = "ProfileFragment";
 
-    ParseUser user;
+
     Post post;
     private RecyclerView rvProfilePosts;
 
     ImageView profPic;
-    TextView tvUser, tvBio,tvRcp;
+    TextView tvUser, tvBio,tvRcp, tvDetail;
     private Button btnLogout;
     protected PostsAdapter profileAdapter;
 
@@ -76,29 +76,27 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        user = getCurrentUser(); // stores the current user that is logged in
         profPic = view.findViewById(R.id.imageView);
         tvUser = view.findViewById(R.id.tvUserAct);
         tvBio = view.findViewById(R.id.tvBio);
+        tvDetail = view.findViewById(R.id.tvDetail);
         btnLogout = view.findViewById(R.id.btnLogout);
         rvProfilePosts = view.findViewById(R.id.rvProfilePosts);
         tvRcp = view.findViewById(R.id.tvRcp);
         swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainerProfile);
-
-       // tvUser.setText("@"+post.getCurrentUser().getUsername());
-
-        /*ParseFile profile = post.getProfilePicture(); // this loads a stove LOL
-
-
-        if (profile != null) {
-            // we need to import Glide libraries
-            Glide.with(this).load(post.getProfilePicture().getUrl()).into(profPic);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        post = new Post();
+        post.setUser(currentUser); // for current logged in user
+        ParseFile profile = post.getProfilePicture();
+        if (profile != null) { // profile
+            Glide.with(getContext()).load(post.getProfilePicture().getUrl()).into(profPic);
         }
-        */
+        tvUser.setText("@" + post.getUser().getUsername());
+
         allProfilePosts = new ArrayList<>();
         profileAdapter = new PostsAdapter(getContext(), allProfilePosts);
         rvProfilePosts.setAdapter(profileAdapter);
-        rvProfilePosts.setLayoutManager(new GridLayoutManager(getContext(), 1));
+        rvProfilePosts.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
 
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

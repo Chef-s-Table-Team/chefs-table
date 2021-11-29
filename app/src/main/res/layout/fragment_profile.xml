@@ -93,6 +93,7 @@
         android:textStyle="bold" />
 
     <GridLayout
+        android:id="@+id/glPosts"
         android:layout_width="411dp"
         android:layout_height="217dp"
         android:layout_alignParentStart="true"
@@ -123,6 +124,19 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </GridLayout>
+
+    <TextView
+        android:id="@+id/tvDetail"
+        android:layout_width="115dp"
+        android:layout_height="33dp"
+        android:layout_below="@+id/tvBio"
+        android:layout_above="@+id/glPosts"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="40dp"
+        android:text="Recent recipes:"
+        android:textColor="#814700"
+        android:textStyle="bold|italic" />
 
 
 </RelativeLayout>
