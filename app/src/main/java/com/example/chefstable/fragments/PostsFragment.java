@@ -38,6 +38,7 @@ public class PostsFragment extends Fragment {
     protected PostsAdapter adapter;
     protected List<Post> allPosts;
     SwipeRefreshLayout swipeContainer;
+    int progressValue;
 
     private Object KEY_USER;
 
@@ -49,6 +50,7 @@ public class PostsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_posts, container, false);
     }
@@ -98,7 +100,7 @@ public class PostsFragment extends Fragment {
                // adapter.clear();
                 allPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
-               // swipeContainer.setRefreshing(false);
+                // swipeContainer.setRefreshing(false);
             }
         });
 

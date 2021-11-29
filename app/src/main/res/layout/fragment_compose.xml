@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,39 +10,63 @@
 
     <EditText
         android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="65dp"
         android:ems="10"
-        android:hint="Description..." />
+        android:hint="What's cooking?" />
 
     <Button
         android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture" />
+        android:layout_height="62dp"
+        android:foregroundGravity="center_vertical|center"
+        android:gravity="center"
+        android:text="Take Picture"
+        app:icon="@drawable/ic_baseline_photo_camera_24" />
 
     <ImageView
         android:id="@+id/ivPostImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="400dp"
+        android:layout_height="148dp"
         tools:srcCompat="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/tvIns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check off the stages you are completing or have completed."
+        android:textStyle="bold" />
+
+
+    <CheckBox
+        android:id="@+id/cbPrep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prepping meal" />
+
+    <CheckBox
+        android:id="@+id/cbCook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cooking/Baking" />
+
+    <CheckBox
+        android:id="@+id/cbReady"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meal ready... Time to eat!" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Submit"
+        app:icon="@drawable/ic_baseline_done_outline_24" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout" />
-
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible" />
+        android:text="Logout"
+        app:icon="@drawable/ic_baseline_free_breakfast_24" />
 
 </LinearLayout>

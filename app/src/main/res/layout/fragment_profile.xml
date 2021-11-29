@@ -11,25 +11,26 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="110dp"
+        android:layout_height="92dp"
+        android:layout_below="@+id/btnLogout"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="87dp"
+        android:layout_marginStart="-4dp"
+        android:layout_marginTop="1dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/tvUser"
+        android:id="@+id/tvUserAct"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/btnLogout"
+
         android:layout_alignParentEnd="true"
-
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="17dp"
+        android:layout_centerHorizontal="true"
 
 
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="34dp"
         android:text="chef"
         android:textColor="#5F3330"
         android:textSize="24sp"
@@ -40,12 +41,12 @@
 
         android:layout_width="375dp"
         android:layout_height="98dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/tvAbMe"
 
-        android:layout_centerInParent="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
         android:text="I love cooking food!"
         android:textColor="#5F3330"
         android:textStyle="italic" />
@@ -57,9 +58,8 @@
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
 
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="221dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="26dp"
 
         android:autoText="false"
         android:clickable="false"
@@ -68,54 +68,61 @@
         android:textColor="#5F3330"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:icon="@drawable/ic_baseline_free_breakfast_24" />
+
     <TextView
         android:id="@+id/tvRcp"
-        android:layout_width="156dp"
-        android:layout_height="35dp"
+        android:layout_width="230dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/tvBio"
         android:layout_alignParentStart="true"
 
         android:layout_alignParentBottom="true"
         android:layout_marginStart="5dp"
-        android:layout_marginBottom="206dp"
+        android:layout_marginBottom="356dp"
 
+        android:background="#00FFEB3B"
         android:text="Recipes Completed:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#5F3330"
         android:textStyle="bold" />
 
-    <TextView
-
-        android:id="@+id/tvNumPosts"
-
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-
-        android:layout_alignParentEnd="true"
+    <GridLayout
+        android:layout_width="411dp"
+        android:layout_height="217dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="224dp"
-        android:layout_marginBottom="208dp"
+        android:layout_marginStart="-6dp"
+        android:layout_marginBottom="4dp">
 
-        android:text="25"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainerProfile"
+            android:layout_width="401dp"
+            android:layout_height="196dp"
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeContainerProfile"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="-17dp"
+            android:layout_marginBottom="17dp"
+            android:background="#F3EAE2">
 
-        android:layout_alignParentBottom="true"
-        android:background="#F3EAE2">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfilePosts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvProfilePosts"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+                />
 
-            />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </GridLayout>
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

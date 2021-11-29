@@ -39,11 +39,13 @@ import java.util.List;
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
     private Context context;
    private List<Post> posts;
+   //private int changes;
 
 
     public PostsAdapter (Context context, List<Post> posts) {
         this.context = context;
         this.posts = posts;
+
     }
 
 
@@ -80,6 +82,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView ivProf1, ivPost;
         private TextView tvUser1, tvCaption;
+        private RoundedProgressBar chefProgress;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -88,19 +91,29 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvCaption = itemView.findViewById(R.id.tvCaption);
             ivPost = itemView.findViewById(R.id.ivPost);
             ivProf1 = itemView.findViewById(R.id.ivProf1); // profile picture
+            chefProgress = itemView.findViewById(R.id.chefProgress); // progress bar
 
         }
 
         public void bind(Post post) {
             // Bind posts that we have to view the elements
             tvCaption.setText(post.getDescription());
-            tvUser1.setText(post.getUser().getUsername());
+            tvUser1.setText("@" + post.getUser().getUsername());
             // make sure to add profile picture snippet
             ParseFile image = post.getImage(); // get the picture
             ParseFile profile = post.getProfilePicture();
 
+            // get the progress of the user
+            if(post.getProgress() == 1) {
+                chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbPrep));
+            }
+            if (post.getProgress() == 2) {
+                chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbCook));
+            }
 
-
+            if (post.getProgress() == 3) {
+                chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbReady));
+            }
             if (image != null) {
                 // we need to import Glide libraries
                 Glide.with(context).load(post.getImage().getUrl()).into(ivPost);

@@ -18,8 +18,11 @@
     <Button
         android:id="@+id/btnCaptureImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture" />
+        android:layout_height="62dp"
+        android:foregroundGravity="center_vertical|center"
+        android:gravity="center"
+        android:text="Take Picture"
+        app:icon="@drawable/ic_baseline_photo_camera_24" />
 
     <ImageView
         android:id="@+id/ivPostImage"
@@ -57,6 +60,7 @@
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Submit"
+        app:icon="@drawable/ic_baseline_done_outline_24" />
 
 </LinearLayout>

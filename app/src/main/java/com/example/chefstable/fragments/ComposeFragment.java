@@ -19,6 +19,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -47,8 +49,9 @@ public class ComposeFragment extends Fragment {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
-    private Button btnLogout; //Added remove if needed
-    private ProgressBar pbLoading;
+
+    private CheckBox cbCook, cbReady, cbPrep;
+    private int prog;
 
 
     private File photoFile;
@@ -76,8 +79,38 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
-        btnLogout = view.findViewById(R.id.btnLogout); //Added remove if needed
-        pbLoading = view.findViewById(R.id.pbLoading);
+
+        cbPrep = view.findViewById(R.id.cbPrep);
+        cbCook = view.findViewById(R.id.cbCook);
+        cbReady = view.findViewById(R.id.cbReady);
+
+        cbPrep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    prog = 1;
+                }
+            }
+        });
+
+        cbCook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    prog = 2;
+                }
+            }
+        });
+
+        cbReady.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    prog = 3;
+                }
+            }
+        });
+
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,29 +137,12 @@ public class ComposeFragment extends Fragment {
             }
         });
 
-        btnLogout.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String curUser = ParseUser.getCurrentUser().getUsername();
-                ParseUser.logOut();
-                //Toast.makeText(MainActivity.this, "User logged out!", Toast.LENGTH_SHORT).show();
-                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
-                if(currentUser == null){
-                    Toast.makeText(getContext(), curUser + " logged out!", Toast.LENGTH_SHORT).show();
-                }
-                goLoginActivity();
-            }
-        }));
+
     }
 
-    private void goLoginActivity(){
-        Intent i = new Intent(getContext(), LoginActivity.class);
-        startActivity(i);
-        getActivity().finish();
-    }
 
     private void launchCamera(){
-        pbLoading.setVisibility(View.INVISIBLE);
+
         // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Create a File reference for future access
@@ -182,6 +198,16 @@ public class ComposeFragment extends Fragment {
         post.setDescription(description);
         post.setImage(new ParseFile(photoFile));
         post.setUser(currentUser);
+        if (prog == 1) {
+            post.setKeyProgress(1);
+        }
+        if (prog == 2) {
+            post.setKeyProgress(2);
+        }
+
+        if (prog == 3) {
+            post.setKeyProgress(3);
+        }
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -192,7 +218,7 @@ public class ComposeFragment extends Fragment {
                 Log.i(TAG, "Post save was successful!");
                 etDescription.setText("");
                 ivPostImage.setImageResource(0);
-                pbLoading.setVisibility(View.VISIBLE);
+
             }
         });
     }

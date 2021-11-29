@@ -16,7 +16,7 @@ public class User extends ParseObject {
     public static final String KEY_PROFILE = "profile";
 
     // getters
-    public ParseFile getProfilePicture () { return getParseFile(KEY_PROFILE);}
+    public ParseFile getProfilePicture () { return this.getParseFile(KEY_PROFILE);}
     public String getBio () { return getString(KEY_BIO); }
     public int getPosts () { return getInt(KEY_NUMPOSTS); } // num posts
     public ParseUser getUser () { return getParseUser(KEY_USER);}

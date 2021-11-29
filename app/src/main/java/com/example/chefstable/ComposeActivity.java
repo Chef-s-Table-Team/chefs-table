@@ -2,7 +2,6 @@ package com.example.chefstable;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
@@ -19,7 +18,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.chefstable.models.Post;
@@ -46,6 +44,7 @@ public class ComposeActivity extends AppCompatActivity {
     private Button btnSubmit;
     private RoundedProgressBar chefProgress;
     private CheckBox cbCook, cbReady, cbPrep;
+    private int prog;
 
 
     private File photoFile;
@@ -60,14 +59,37 @@ public class ComposeActivity extends AppCompatActivity {
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
-        chefProgress = findViewById(R.id.chefProgress); // progress bar
+        chefProgress = findViewById(R.id.chefProgress); // progress bar from itemPost.xml
         cbPrep = findViewById(R.id.cbPrep);
         cbCook = findViewById(R.id.cbCook);
         cbReady = findViewById(R.id.cbReady);
 
+       cbPrep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if(b){
+                   prog = 1;
+               }
+           }
+       });
 
+       cbCook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if (b) {
+                   prog = 2;
+               }
+           }
+       });
 
-
+       cbReady.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if (b) {
+                   prog = 3;
+               }
+           }
+       });
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,8 +102,7 @@ public class ComposeActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("strMeal"));
-                String description = recipe.getTitle() +  etDescription.getText().toString();
+                String description = etDescription.getText().toString();
                 if(description.isEmpty()){
                     Toast.makeText(ComposeActivity.this, "Description cannot be empty!", Toast.LENGTH_SHORT).show();
                     return;
@@ -93,7 +114,7 @@ public class ComposeActivity extends AppCompatActivity {
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
 
-                // update the numPosts for that currrent logged in user
+
 
                 goMainActiv();
             }
@@ -165,6 +186,17 @@ public class ComposeActivity extends AppCompatActivity {
         post.setDescription(description);
         post.setImage(new ParseFile(photoFile));
         post.setUser(currentUser);
+
+        if (prog == 1) {
+            post.setKeyProgress(1);
+        }
+        if (prog == 2) {
+            post.setKeyProgress(2);
+        }
+
+        if (prog == 3) {
+            post.setKeyProgress(3);
+        }
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {

@@ -14,6 +14,7 @@ public class Post extends ParseObject implements Serializable {
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_KEY = "createdAt";
     public static final String KEY_PROFILE = "profile";
+    public static final String KEY_PROGRESS = "progress";
     
     public ParseFile getProfilePicture () { return getUser().getParseFile(KEY_PROFILE); }
 
@@ -21,11 +22,13 @@ public class Post extends ParseObject implements Serializable {
         return getString(KEY_DESCRIPTION);
     }
 
+    public int getProgress() { return getInt(KEY_PROGRESS);}
 
 
     public void setDescription(String description) {
         put(KEY_DESCRIPTION, description);
     }
+    public void setKeyProgress(int progress) {put(KEY_PROGRESS, progress);}
 
     public ParseFile getImage() {
         return getParseFile(KEY_IMAGE);
