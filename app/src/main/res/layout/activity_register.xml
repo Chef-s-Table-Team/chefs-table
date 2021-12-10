@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#F7E4D1"
     android:gravity="center"
     android:orientation="vertical"
@@ -17,11 +17,12 @@
 
         <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="381dp"
+            android:layout_width="396dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            app:srcCompat="@drawable/cook"
             tools:srcCompat="@tools:sample/avatars" />
 
         <EditText
@@ -54,9 +55,10 @@
         <Button
             android:id="@+id/btnSign"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="7dp"
             android:layout_weight="1"
-            android:text="REGISTER!" />
+            android:text="REGISTER!"
+            app:icon="@drawable/ic_baseline_restaurant_24" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
