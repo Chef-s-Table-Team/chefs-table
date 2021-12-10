@@ -33,6 +33,10 @@
         </provider>
 
         <activity
+            android:name=".EditActivity"
+            android:exported="true"/>
+
+        <activity
             android:name=".DetailedRecipeActivity"
             android:exported="true" />
         <activity
