@@ -15,7 +15,10 @@ public class Post extends ParseObject implements Serializable {
     public static final String KEY_CREATED_KEY = "createdAt";
     public static final String KEY_PROFILE = "profile";
     public static final String KEY_PROGRESS = "progress";
-    
+    public static final String KEY_BIO = "bio";
+
+
+    public String getBio () { return ParseUser.getCurrentUser().getString(KEY_BIO); }
     public ParseFile getProfilePicture () { return getUser().getParseFile(KEY_PROFILE); }
 
     public String getDescription(){
@@ -45,6 +48,7 @@ public class Post extends ParseObject implements Serializable {
     public void setUser(ParseUser user) {
         put(KEY_USER, user);
     }
+    public void setBio (String bio) { put(KEY_BIO, bio); }
 
     public void setProfile(ParseUser user) {put(KEY_PROFILE, user);}
 }

@@ -37,23 +37,10 @@
         android:textStyle="bold" />
 
 
-    <CheckBox
-        android:id="@+id/cbPrep"
+    <SeekBar
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Prepping meal" />
-
-    <CheckBox
-        android:id="@+id/cbCook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cooking/Baking" />
-
-    <CheckBox
-        android:id="@+id/cbReady"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Meal ready... Time to eat!" />
+        android:layout_height="59dp" />
 
     <Button
         android:id="@+id/btnSubmit"
@@ -61,12 +48,5 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         app:icon="@drawable/ic_baseline_done_outline_24" />
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        app:icon="@drawable/ic_baseline_free_breakfast_24" />
 
 </LinearLayout>

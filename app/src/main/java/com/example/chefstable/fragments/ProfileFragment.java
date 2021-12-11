@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -29,6 +28,7 @@ import com.example.chefstable.R;
 
 import com.example.chefstable.adapters.PostsAdapter;
 
+import com.example.chefstable.EditActivity;
 import com.example.chefstable.models.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment {
 
     ImageView profPic;
     TextView tvUser, tvBio,tvRcp, tvDetail;
-    private Button btnLogout;
+    private Button btnLogout, btnEd;
     protected PostsAdapter profileAdapter;
 
     protected List<Post> allProfilePosts;
@@ -81,6 +81,7 @@ public class ProfileFragment extends Fragment {
         tvBio = view.findViewById(R.id.tvBio);
         tvDetail = view.findViewById(R.id.tvDetail);
         btnLogout = view.findViewById(R.id.btnLogout);
+        btnEd = view.findViewById(R.id.btnEd);
         rvProfilePosts = view.findViewById(R.id.rvProfilePosts);
         tvRcp = view.findViewById(R.id.tvRcp);
         swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainerProfile);
@@ -88,10 +89,13 @@ public class ProfileFragment extends Fragment {
         post = new Post();
         post.setUser(currentUser); // for current logged in user
         ParseFile profile = post.getProfilePicture();
+
+        tvBio.setText(ParseUser.getCurrentUser().getString("bio"));
         if (profile != null) { // profile
             Glide.with(getContext()).load(post.getProfilePicture().getUrl()).into(profPic);
         }
         tvUser.setText("@" + post.getUser().getUsername());
+       // Log.i("BIO", post.getBio());
 
         allProfilePosts = new ArrayList<>();
         profileAdapter = new PostsAdapter(getContext(), allProfilePosts);
@@ -110,6 +114,13 @@ public class ProfileFragment extends Fragment {
             }
         });
         queryPosts();
+
+        btnEd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goEditActivity();
+            }
+        });
         btnLogout.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,6 +138,12 @@ public class ProfileFragment extends Fragment {
     private void goLoginActivity(){
         Intent i = new Intent(getContext(), LoginActivity.class);
         startActivity(i);
+        getActivity().finish();
+    }
+
+    private void goEditActivity() {
+        Intent m = new Intent(getContext(), EditActivity.class);
+        startActivity(m);
         getActivity().finish();
     }
     protected void queryPosts() {

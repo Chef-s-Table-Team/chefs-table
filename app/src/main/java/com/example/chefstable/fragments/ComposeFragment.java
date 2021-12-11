@@ -50,7 +50,7 @@ public class ComposeFragment extends Fragment {
     private ImageView ivPostImage;
     private Button btnSubmit;
 
-    private CheckBox cbCook, cbReady, cbPrep;
+   // private CheckBox cbCook, cbReady, cbPrep;
     private int prog;
 
 
@@ -80,6 +80,7 @@ public class ComposeFragment extends Fragment {
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
 
+        /*
         cbPrep = view.findViewById(R.id.cbPrep);
         cbCook = view.findViewById(R.id.cbCook);
         cbReady = view.findViewById(R.id.cbReady);
@@ -110,7 +111,7 @@ public class ComposeFragment extends Fragment {
                 }
             }
         });
-
+        */
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
