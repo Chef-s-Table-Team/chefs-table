@@ -29,18 +29,25 @@
         android:layout_width="400dp"
         android:layout_height="148dp"
         tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/tvIns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check off the stages you are completing or have completed."
+        android:text="Use the slider to indicate how far along you are in your recipe!"
         android:textStyle="bold" />
 
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/sbProg"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
-        android:layout_height="59dp" />
+        android:layout_height="59dp"
+        android:indeterminate="false"
+        android:max="3"
+        android:progressTint="#FFEB3B"
+        android:secondaryProgressTint="#FFC107"
+        android:tickMark="@color/chefsPrimary"/>
 
     <Button
         android:id="@+id/btnSubmit"

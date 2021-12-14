@@ -26,20 +26,21 @@
 
             <TextView
                 android:id="@+id/receipe_name"
-                android:layout_width="wrap_content"
+                android:layout_width="405dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ivLogoD"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="51dp"
-                android:layout_marginTop="85dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="0dp"
                 android:background="#FFF5A2"
                 android:text="cheesecake"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvIngLogo"
