@@ -5,6 +5,7 @@
     android:id="@+id/LinContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7E4D1"
     android:orientation="vertical"
     tools:context=".fragments.ComposeFragment">
 
@@ -34,27 +35,19 @@
         android:id="@+id/tvIns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check off the stages you are completing or have completed."
+        android:text="Use the slider to indicate how far along you are in your recipe!"
         android:textStyle="bold" />
 
 
-    <CheckBox
-        android:id="@+id/cbPrep"
+    <SeekBar
+        android:id="@+id/sbProg"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Prepping meal" />
-
-    <CheckBox
-        android:id="@+id/cbCook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cooking/Baking" />
-
-    <CheckBox
-        android:id="@+id/cbReady"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Meal ready... Time to eat!" />
+        android:layout_height="59dp"
+        android:indeterminate="false"
+        android:max="3"
+        android:progressTint="#FFEB3B"
+        android:secondaryProgressTint="#FFC107" />
 
     <Button
         android:id="@+id/btnSubmit"

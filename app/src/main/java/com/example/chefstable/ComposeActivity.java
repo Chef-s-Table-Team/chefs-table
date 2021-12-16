@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.example.chefstable.models.Post;
@@ -43,7 +44,7 @@ public class ComposeActivity extends AppCompatActivity {
     private ImageView ivPostImage;
     private Button btnSubmit;
     private RoundedProgressBar chefProgress;
-    private CheckBox cbCook, cbReady, cbPrep;
+    private SeekBar sbProg;
     private int prog;
 
 
@@ -60,36 +61,41 @@ public class ComposeActivity extends AppCompatActivity {
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
         chefProgress = findViewById(R.id.chefProgress); // progress bar from itemPost.xml
-        cbPrep = findViewById(R.id.cbPrep);
-        cbCook = findViewById(R.id.cbCook);
-        cbReady = findViewById(R.id.cbReady);
+        sbProg = findViewById(R.id.sbProg);
 
-       cbPrep.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-               if(b){
-                   prog = 1;
-               }
-           }
-       });
 
-       cbCook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-               if (b) {
-                   prog = 2;
-               }
-           }
-       });
+        sbProg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressBarVals = 0;
 
-       cbReady.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-               if (b) {
-                   prog = 3;
-               }
-           }
-       });
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                progressBarVals = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                prog = progressBarVals;
+                if (prog == 0) {
+                    Toast.makeText(ComposeActivity.this, "Just making a post!", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 1) {
+                    Toast.makeText(ComposeActivity.this, "Prepping the meal!", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 2) {
+                    Toast.makeText(ComposeActivity.this, "Currently cooking/baking", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 3) {
+                    Toast.makeText(ComposeActivity.this, "Ready! Let the world see your creation!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,27 +244,5 @@ public class ComposeActivity extends AppCompatActivity {
 
     }
 
-    public void onCheckBoxClicked(View v) {
-        boolean checked = ((CheckBox) v).isChecked();
-        switch (v.getId()) {
-            case R.id.cbPrep:
-                if (checked) {
-                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbPrep));
-                    chefProgress.setBackgroundColor(getResources().getColor(R.color.pbPrep));
-                    Log.d("COLOR PB", "CB PREP...Made it here");
-                }
-                break;
-            case R.id.cbCook:
-                if (checked) {
-                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbCook));
 
-                }
-                break;
-            case R.id.cbReady:
-                if (checked) {
-                    chefProgress.setBackgroundDrawableColor(getResources().getColor(R.color.pbReady));
-                }
-                break;
-        }
-    }
 }

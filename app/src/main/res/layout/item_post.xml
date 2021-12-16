@@ -29,10 +29,11 @@
 
     <com.mackhartley.roundedprogressbar.RoundedProgressBar
         android:id="@+id/chefProgress"
-        android:layout_width="245dp"
+        android:layout_width="129dp"
         android:layout_height="19dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         app:rpbBackgroundColor="#A19F9B"
         app:rpbCornerRadius="20dp"
         app:rpbProgressColor="#F3E9D2"
