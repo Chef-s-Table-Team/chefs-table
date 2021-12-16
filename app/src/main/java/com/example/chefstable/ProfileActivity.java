@@ -47,6 +47,8 @@ public class ProfileActivity extends AppCompatActivity {
             // we need to import Glide libraries
             Glide.with(this).load(post.getProfilePicture().getUrl()).into(ivProfilePic);
         }
+
+
         queryPosts();
     }
 

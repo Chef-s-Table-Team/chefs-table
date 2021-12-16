@@ -51,7 +51,7 @@
         tools:layout_editor_absoluteY="181dp" />
 
     <ImageView
-        android:id="@+id/ivProfEdit"
+        android:id="@+id/image_pro"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
