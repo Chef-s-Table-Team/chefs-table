@@ -5,6 +5,7 @@
     android:id="@+id/LinContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7E4D1"
     android:orientation="vertical"
     tools:context=".fragments.ComposeFragment">
 
