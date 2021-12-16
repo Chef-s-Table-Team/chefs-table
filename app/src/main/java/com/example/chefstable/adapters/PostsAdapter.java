@@ -102,17 +102,28 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             // make sure to add profile picture snippet
             ParseFile image = post.getImage(); // get the picture
             ParseFile profile = post.getProfilePicture();
-
+           // chefProgress.showProgressText(true);
             // get the progress of the user
+
+            if(post.getProgress() == 0) {
+                chefProgress.setVisibility(View.INVISIBLE);
+            }
+
             if(post.getProgress() == 1) {
                 chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbPrep));
+                chefProgress.setProgressPercentage(25, true);
+                chefProgress.showProgressText(true);
             }
             if (post.getProgress() == 2) {
                 chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbCook));
+                chefProgress.setProgressPercentage(50, true);
+                chefProgress.showProgressText(true);
             }
 
             if (post.getProgress() == 3) {
                 chefProgress.setBackgroundDrawableColor(context.getResources().getColor(R.color.pbReady));
+                chefProgress.setProgressPercentage(100, true);
+                chefProgress.showProgressText(true);
             }
             if (image != null) {
                 // we need to import Glide libraries

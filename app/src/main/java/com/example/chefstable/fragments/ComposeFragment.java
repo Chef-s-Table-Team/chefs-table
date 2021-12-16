@@ -24,8 +24,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.example.chefstable.ComposeActivity;
 import com.example.chefstable.LoginActivity;
 import com.example.chefstable.models.Post;
 import com.example.chefstable.R;
@@ -49,6 +51,7 @@ public class ComposeFragment extends Fragment {
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+    private SeekBar sbProg;
 
    // private CheckBox cbCook, cbReady, cbPrep;
     private int prog;
@@ -79,6 +82,38 @@ public class ComposeFragment extends Fragment {
         btnCaptureImage = view.findViewById(R.id.btnCaptureImage);
         ivPostImage = view.findViewById(R.id.ivPostImage);
         btnSubmit = view.findViewById(R.id.btnSubmit);
+        sbProg = view.findViewById(R.id.sbProg);
+
+        sbProg.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressBarVals = 0;
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                progressBarVals = i;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                    prog = progressBarVals;
+                if (prog == 0) {
+                    Toast.makeText(getContext(), "Just making a post!", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 1) {
+                    Toast.makeText(getContext(), "Prepping the meal!", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 2) {
+                    Toast.makeText(getContext(), "Currently cooking/baking", Toast.LENGTH_SHORT).show();
+                }
+                if (prog == 3) {
+                    Toast.makeText(getContext(), "Ready! Let the world see your creation!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         /*
         cbPrep = view.findViewById(R.id.cbPrep);
