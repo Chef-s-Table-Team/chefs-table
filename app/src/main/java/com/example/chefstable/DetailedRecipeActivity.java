@@ -38,6 +38,7 @@ public class DetailedRecipeActivity extends AppCompatActivity {
        Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("strMeal"));
         recipeName.setText(recipe.getTitle());
         inst.setText(recipe.getInstructions());
+        ingList.setText(recipe.getIngredients_());
 
     //    Glide.with(conts).load(recipe.getMealThumb()).into(foodPic);
 
