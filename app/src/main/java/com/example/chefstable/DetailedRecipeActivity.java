@@ -34,13 +34,14 @@ public class DetailedRecipeActivity extends AppCompatActivity {
         recipeName = findViewById(R.id.receipe_name);
         ingList = findViewById(R.id.ingredient_list);
         inst = findViewById(R.id.instructions);
+        foodPic = findViewById(R.id.ivFoodPic);
 
        Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("strMeal"));
         recipeName.setText(recipe.getTitle());
         inst.setText(recipe.getInstructions());
         ingList.setText(recipe.getIngredients_());
 
-    //    Glide.with(conts).load(recipe.getMealThumb()).into(foodPic);
+        Glide.with(DetailedRecipeActivity.this).load(recipe.getMealThumb()).into(foodPic);
 
 
 

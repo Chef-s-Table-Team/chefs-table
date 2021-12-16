@@ -43,30 +43,30 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvIngLogo"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvInsLogo"
+                android:layout_width="132dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ingredient_list"
                 android:layout_alignBottom="@+id/instructions"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginBottom="19dp"
                 android:text="INSTRUCTIONS"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/instructions" />
 
             <TextView
                 android:id="@+id/ingredient_list"
-                android:layout_width="406dp"
+                android:layout_width="392dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="166dp"
-                android:layout_marginEnd="5dp"
-                android:background="#8AAE741C"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="320dp"
+                android:layout_marginEnd="13dp"
+                android:background="#8AD5B079"
                 android:text="ingredient list"
                 android:textStyle="bold" />
 
@@ -77,23 +77,24 @@
                 android:layout_below="@+id/ingredient_list"
                 android:layout_alignParentStart="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="37dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="152dp"
                 android:layout_marginEnd="8dp"
-                android:background="#FFF594"
+                android:background="#F6F1BE"
                 android:gravity="center"
                 android:text="Instructions of food making"
                 android:textAlignment="center" />
 
             <Button
                 android:id="@+id/try_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="370dp"
+                android:layout_height="67dp"
                 android:layout_below="@+id/instructions"
                 android:layout_alignParentStart="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="156dp"
-                android:layout_marginTop="127dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="75dp"
+                android:gravity="center"
                 android:text="Try recipe"
                 android:textSize="10sp" />
 
@@ -103,10 +104,22 @@
                 android:layout_height="33dp"
                 android:layout_below="@+id/receipe_name"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="176dp"
                 android:text="INGREDIENTS"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivFoodPic"
+                android:layout_width="244dp"
+                android:layout_height="163dp"
+                android:layout_below="@+id/receipe_name"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="106dp"
+                app:layout_constraintBottom_toTopOf="@id/tvInglogo"
+                app:layout_constraintTop_toBottomOf="@id/receipe_name"
+                tools:srcCompat="@tools:sample/avatars" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
