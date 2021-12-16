@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.chefstable.models.Post;
-import com.example.chefstable.models.User;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -40,7 +39,7 @@ public class EditActivity extends AppCompatActivity {
         editText = findViewById(R.id.tvEdBio);
         tvCount = findViewById(R.id.tvCount);
         btnPic = findViewById(R.id.btnPic);
-        ivProfPic = findViewById(R.id.ivProfEdit);
+        ivProfPic = findViewById(R.id.image_pro);
 
         ParseUser user = ParseUser.getCurrentUser();
         ParseFile profPic = ParseUser.getCurrentUser().getParseFile("profile"); // retrieving the profile
@@ -101,6 +100,13 @@ public class EditActivity extends AppCompatActivity {
                 btnEdButton.setEnabled(false);
             }
             tvCount.setText(convert);
+            }
+        });
+        btnPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EditActivity.this,editProfilePage.class);
+                startActivity(intent);
             }
         });
     }
