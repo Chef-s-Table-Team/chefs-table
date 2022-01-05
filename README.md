@@ -244,7 +244,7 @@ ParseUser.logInInBackground("Jerry", "showmethemoney", new LogInCallback() {
 
 ## Endpoints
 
-- ### Back4App (to be created)
+- ### Back4App
     - Base URL - [https://parseapi.back4app.com/classes/ChefsTable](https://parseapi.back4app.com/classes/ChefsTable)
 
    | HTTP Verb | Endpoint | Description |
